@@ -267,6 +267,14 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media (max-width:1000px){.pf-shot{min-height:0;aspect-ratio:16/9}}
 @media (max-width:900px){.cm-art{min-height:0}}
 </style>
+
+<!-- Progressive enhancement: content must remain visible if JavaScript fails. -->
+<style id="ehs-reliability-and-polish">
+.rv,.rv.d1,.rv.d2,.rv.d3,.rv.d4{opacity:1!important;transform:none!important;visibility:visible!important}
+:focus-visible{outline:2px solid #68e4db!important;outline-offset:4px}
+@media(hover:hover){a,button{transition:color .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
