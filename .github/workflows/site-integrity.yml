@@ -1,0 +1,29 @@
+name: Site integrity
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify HTML and local media paths
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          p=Path('index.html')
+          assert p.is_file(), 'index.html missing'
+          s=p.read_text(encoding='utf-8')
+          assert '<main' in s and '</html>' in s, 'HTML structure incomplete'
+          assert 'Event Horizon' in s, 'Site identity missing'
+          class LocalAssets(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  a=dict(attrs)
+                  for key in ('src',):
+                      v=a.get(key,'')
+                      if v and not v.startswith(('http:', 'https:', 'data:', '#', '//')): assert Path(v).is_file(), f'Missing {v}'
+          LocalAssets().feed(s)
+          print('HTML and local assets verified')
+          PY
