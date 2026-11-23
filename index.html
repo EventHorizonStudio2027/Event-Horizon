@@ -136,12 +136,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media (max-width:760px){
   .cr{display:none}
   .bh{width:150vw;right:-62%;top:-14%;opacity:.38}.hero p.lead{color:var(--text);opacity:.85}.hero{min-height:calc(100svh - 4rem)}
-  main{margin-left:0}
-  .rail{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 1.5rem);height:auto;flex-direction:row;padding:.4rem;border-radius:20px}
-  .rail:hover,.rail:focus-within{width:max-content}
-  .rail a{height:2.6rem;width:2.6rem;padding:0;justify-content:center}.rail a span,.rail .mark,.rail .sp{display:none}
-  .rail a.on::before{left:30%;right:30%;top:auto;bottom:-.4rem;width:auto;height:3px}
-  .page{padding-bottom:5rem}.g2,.bento{grid-template-columns:1fr}.flag,.span2{grid-column:auto}
+  .g2,.bento{grid-template-columns:1fr}.flag,.span2{grid-column:auto}
   .row{grid-template-columns:2.5rem 1fr 1.5rem}.row p{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
@@ -310,21 +305,41 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 /* Final refinement: accessible motion behavior and subtle video framing */
 #rail video{outline:1px solid rgba(232,172,103,.28);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}#rail video{animation:none!important}}
+@media (max-width:760px){
+  main{margin-left:calc(env(safe-area-inset-left,0px) + 72px)}
+  .page{width:min(1160px,100% - 1.5rem)}
+  #rail,#rail:hover,#rail:focus-within{
+    top:calc(env(safe-area-inset-top,0px) + 8px);
+    bottom:calc(env(safe-area-inset-bottom,0px) + 8px);
+    left:calc(env(safe-area-inset-left,0px) + 8px);
+    width:56px;
+    padding:7px 4px;
+    border-radius:16px;
+    overflow:auto!important;
+    scrollbar-width:none;
+  }
+  #rail .mark,#rail .sp,#rail>a>span{display:none}
+  #rail>a{justify-content:center;padding:0;gap:0}
+  #rail>a:focus-visible{outline-offset:-3px}
+  #rail>a>svg,#rail:hover>a>svg,#rail:focus-within>a>svg{margin:0}
+  #rail a.on::before{left:0}
+  #rail #eh-top-left-animated-logo{width:40px!important;height:40px!important}
+}
 </style></head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
 <div aria-hidden="true" class="aurora"><i></i><i></i><i></i></div>
 <nav aria-label="Site navigation" class="rail" id="rail"><video aria-label="Event Horizon animated logo, looping" autoplay="" id="eh-top-left-animated-logo" loop="" muted="" playsinline="" preload="metadata"><source src="assets/media_02.mp4" type="video/mp4"/></video>
 <a aria-label="Event Horizon Studios home" class="mark" href="#overview"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-20 12 12)"></ellipse></svg><span><b>Event Horizon</b></span></a>
-<a href="#overview"><svg viewbox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"></path></svg><span>Overview</span></a>
-<a href="#studio"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-4 3-6 7-6s7 2 7 6"></path></svg><span>Studio</span></a>
-<a href="#game"><svg viewbox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M12 8v8M8.5 12h7"></path></svg><span>Fate’s Passage</span></a>
-<a href="#games"><svg viewbox="0 0 24 24"><rect height="11" rx="4" width="18" x="3" y="7"></rect><path d="M8 10v5M5.5 12.5h5M16 11h.01M18 14h.01"></path></svg><span>More games</span></a>
-<a href="#apps"><svg viewbox="0 0 24 24"><rect height="20" rx="3" width="10" x="7" y="2"></rect><path d="M11 18h2"></path></svg><span>Apps</span></a>
-<a href="#channels"><svg viewbox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="5"></rect><path d="M8 21h8M12 17v4"></path></svg><span>Channels</span></a>
-<a href="#build"><svg viewbox="0 0 24 24"><path d="M14 6l4 4-9 9H5v-4zM13 7l4 4"></path></svg><span>Services</span></a>
+<a aria-label="Overview" href="#overview"><svg viewbox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"></path></svg><span>Overview</span></a>
+<a aria-label="Studio" href="#studio"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-4 3-6 7-6s7 2 7 6"></path></svg><span>Studio</span></a>
+<a aria-label="Fate’s Passage" href="#game"><svg viewbox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M12 8v8M8.5 12h7"></path></svg><span>Fate’s Passage</span></a>
+<a aria-label="More games" href="#games"><svg viewbox="0 0 24 24"><rect height="11" rx="4" width="18" x="3" y="7"></rect><path d="M8 10v5M5.5 12.5h5M16 11h.01M18 14h.01"></path></svg><span>More games</span></a>
+<a aria-label="Apps" href="#apps"><svg viewbox="0 0 24 24"><rect height="20" rx="3" width="10" x="7" y="2"></rect><path d="M11 18h2"></path></svg><span>Apps</span></a>
+<a aria-label="Channels" href="#channels"><svg viewbox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="5"></rect><path d="M8 21h8M12 17v4"></path></svg><span>Channels</span></a>
+<a aria-label="Services" href="#build"><svg viewbox="0 0 24 24"><path d="M14 6l4 4-9 9H5v-4zM13 7l4 4"></path></svg><span>Services</span></a>
 <div class="sp"></div>
-<a href="#contact"><svg viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="M3 8l9 6 9-6"></path></svg><span>Contact</span></a>
+<a aria-label="Contact" href="#contact"><svg viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="M3 8l9 6 9-6"></path></svg><span>Contact</span></a>
 <div aria-label="Copyright 2026" class="cr"><span>©</span><span>2026</span></div>
 </nav>
 <main><div class="page">
