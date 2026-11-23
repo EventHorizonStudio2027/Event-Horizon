@@ -18,7 +18,7 @@ else:
     if not re.search(r"<img\b|data:image/", html, re.I):
         errors.append("No images found")
     for ref in re.findall(r"""(?:src|poster)=["']([^"']+)["']""", html, re.I):
-        if ref.startswith(("data:", "http:", "https:", "//", "#")):
+        if ref == "about:blank" or ref.startswith(("data:", "http:", "https:", "//", "#")):
             continue
         if not (root / ref.split("?")[0].split("#")[0]).is_file():
             errors.append(f"Missing media reference: {ref[:140]}")
