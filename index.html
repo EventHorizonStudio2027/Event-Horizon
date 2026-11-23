@@ -50,7 +50,7 @@ p{margin:0 0 1em;color:var(--mut);max-width:56ch}a{color:inherit}
 .rail .mark b{font:700 .95rem Sora,sans-serif;letter-spacing:-.02em}
 .cr{display:flex;flex-direction:column;align-items:center;margin-top:.5rem;font:500 .56rem/1.3 "JetBrains Mono",monospace;letter-spacing:.06em;color:var(--mut);opacity:.7;user-select:none}
 
-main{margin-left:104px;overflow-x:clip}
+main{margin-left:104px;overflow-x:clip;isolation:isolate}
 .page{width:min(1160px,100% - 3rem);margin-inline:auto}
 section{padding:6rem 0 2rem}
 section:first-child{padding-top:5rem}
@@ -64,7 +64,7 @@ section:first-child{padding-top:5rem}
 
 .hero{position:relative;display:flex;align-items:flex-end;min-height:calc(100vh - 5rem);padding-bottom:3.5rem}.hero::after{content:"";position:absolute;inset:-2rem -60vw 0 -60vw;background:linear-gradient(to top,var(--bg) 6%,color-mix(in srgb,var(--bg) 55%,transparent) 38%,transparent 62%);z-index:1;pointer-events:none}.hero>div:first-child{position:relative;z-index:2;max-width:48rem}
 .hero p.lead{font-size:1.3rem;margin-top:1.5rem;max-width:42rem}
-.bh{position:absolute;aspect-ratio:1;width:min(1000px,125vw);right:-18%;top:-6%;z-index:0;pointer-events:none;filter:opacity(.48)}
+.bh{position:absolute;aspect-ratio:1;width:min(1000px,125vw);right:-18%;top:-6%;z-index:-1;pointer-events:none;filter:opacity(.48)}
 .bh .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 5%,var(--a),var(--b),var(--c),transparent 85%);-webkit-mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);animation:spin 12s linear infinite;filter:blur(1px)}
 .bh .ring.two{inset:-3%;transform:rotateX(72deg);opacity:.9;animation-duration:9s;animation-direction:reverse}
 .bh .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 40%,transparent),transparent 65%);filter:blur(30px);animation:pulse 5s ease-in-out infinite}
