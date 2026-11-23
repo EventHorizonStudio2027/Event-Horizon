@@ -54,6 +54,7 @@ main{margin-left:104px;overflow-x:clip}
 .page{width:min(1160px,100% - 3rem);margin-inline:auto}
 section{padding:6rem 0 2rem}
 section:first-child{padding-top:5rem}
+#overview{padding-top:calc(5rem - 25px)}
 .head{margin-bottom:2.6rem}.head .mono{display:block;margin-bottom:1.1rem}.head p{font-size:1.1rem}
 
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:14px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid var(--line);background:var(--glass);transition:transform .25s,border-color .25s,box-shadow .25s}
@@ -253,7 +254,20 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media(max-width:760px){.eh-cinema-grid{grid-template-columns:1fr}.eh-cinema-art{max-height:220px}}
 </style><style id="eh-nebula-background-addition">
 /* Event Horizon artwork: sharper, larger and more visible; all existing site styles untouched. */
-.aurora::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(90deg,rgba(5,6,11,.56),rgba(5,6,11,.07) 35%,rgba(5,6,11,.10) 70%,rgba(5,6,11,.60)),linear-gradient(180deg,#05060b 0%,transparent 15%,transparent 85%,#05060b 100%),url("assets/media_01.webp");background-size:cover,cover,auto 142%;background-position:center,center,center;background-repeat:no-repeat;opacity:.76;mask-image:radial-gradient(ellipse 100% 90% at 52% 50%,black 52%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 100% 90% at 52% 50%,black 52%,transparent 100%)}
+.aurora::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:min(100%,46.09375vh);
+  aspect-ratio:944 / 2048;
+  pointer-events:none;
+  background:url("assets/media_01.webp") center / contain no-repeat;
+  opacity:.72;
+  -webkit-mask-image:radial-gradient(ellipse closest-side,black 58%,rgba(0,0,0,.55) 78%,transparent 100%);
+  mask-image:radial-gradient(ellipse closest-side,black 58%,rgba(0,0,0,.55) 78%,transparent 100%);
+}
 .aurora::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 90% 75% at 50% 50%,transparent 57%,#05060b 100%)}
 #eh-top-left-animated-logo{position:fixed;top:12px;left:12px;width:78px;height:78px;z-index:9999;object-fit:contain;pointer-events:none;background:rgba(0,0,0,.2);border-radius:12px;filter:drop-shadow(0 0 9px rgba(255,165,92,.25))}
 @media(max-width:650px){#eh-top-left-animated-logo{width:56px;height:56px;top:7px;left:7px}}
