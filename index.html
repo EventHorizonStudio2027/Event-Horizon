@@ -157,7 +157,8 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.4rem;padding:.35rem;border:1px solid var(--line);border-radius:999px;width:max-content;max-width:100%;background:var(--glass)}
 .tabs button{font:500 .92rem Inter,sans-serif;color:var(--mut);background:none;border:0;padding:.6rem 1.2rem;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
 .tabs button:hover{color:var(--text)}
-.tabs button[aria-selected="true"]{background:var(--a);color:var(--ink);font-weight:600}
+@media(max-width:760px){.tabs{width:100%;border-radius:16px}.tabs button{flex:1 1 auto;min-height:44px;padding:.5rem .7rem}}
+.tabs button[aria-selected="true"]{background:var(--a);color:var(--ink);font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.22)}
 .panel[hidden]{display:none}
 .panel .lead2{max-width:62ch;margin-bottom:1.6rem}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -416,7 +417,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <h3>Explore Arkaedon</h3>
 <p>A live 3D map of the continent, running right here. Drag to look around and scroll to zoom.</p>
 <button class="btn main" id="mw-launch" type="button">Launch the map</button>
-<p class="hint" id="mw-hint">Best on a larger screen. On a phone, use Full screen.</p>
+<p class="hint" id="mw-hint" role="status">Best on a larger screen. On a phone, use Full screen.</p>
 </div>
 </div>
 </div>
@@ -522,14 +523,30 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div></main>
 <script>
 (function(){
-  var links=document.querySelectorAll('#rail a[href^="#"]'),map={};
-  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var links=Array.from(document.querySelectorAll('#rail a[href^="#"]:not(.mark)'));
+  var sections=links.map(function(link){return document.getElementById(link.hash.slice(1))});
+  function updateNavigation(){
+    var line=window.innerHeight*.3;
+    var active=0;
+    sections.forEach(function(section,i){if(section.getBoundingClientRect().top<=line)active=i});
+    links.forEach(function(link,i){
+      link.classList.toggle('on',i===active);
+      if(i===active)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  var navigationFrame=0;
+  function scheduleNavigation(){
+    if(navigationFrame)return;
+    navigationFrame=requestAnimationFrame(function(){navigationFrame=0;updateNavigation()});
+  }
+  window.addEventListener('scroll',scheduleNavigation,{passive:true});
+  window.addEventListener('resize',scheduleNavigation);
+  updateNavigation();
   var rv=document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   rv.forEach(function(e){io.observe(e)});
-  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.remove('on')});var a=map[e.target.id];if(a&&e.target.id!=='overview'||e.target.id==='overview'){if(a)a.classList.add('on')}}})},{rootMargin:'-35% 0px -55% 0px'});
-  document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
   document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.querySelectorAll('.stat b').forEach(function(b){var n=+b.dataset.n,t0=null;b.textContent='0';
@@ -543,7 +560,19 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   function show(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on})}
   tabs.forEach(function(b,i){
     b.addEventListener('click',function(){show(b)});
-    b.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];if(k==='ArrowLeft')n=tabs[(i+tabs.length-1)%tabs.length];if(n){e.preventDefault();show(n);n.focus()}})
+    b.addEventListener('keydown',function(e){
+      var next;
+      switch(e.key){
+        case 'ArrowRight': next=tabs[(i+1)%tabs.length]; break;
+        case 'ArrowLeft': next=tabs[(i+tabs.length-1)%tabs.length]; break;
+        case 'Home': next=tabs[0]; break;
+        case 'End': next=tabs[tabs.length-1]; break;
+        default: return;
+      }
+      e.preventDefault();
+      show(next);
+      next.focus();
+    });
   });
 })();
 </script>
@@ -553,24 +582,28 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   var body=document.getElementById('mw-body'),poster=document.getElementById('mw-poster'),btn=document.getElementById('mw-launch'),hint=document.getElementById('mw-hint'),win=document.getElementById('map'),rel=document.getElementById('mw-reload'),full=document.getElementById('mw-full'),frame=null,busy=false;
   var art=document.querySelector('.launch img');if(art)document.getElementById('mw-bg').style.backgroundImage='url('+art.src+')';
   async function load(){
-    if(busy)return;busy=true;btn.disabled=true;btn.textContent='Loading the map…';
+    if(busy)return;busy=true;btn.disabled=true;rel.disabled=true;btn.textContent='Loading the map…';hint.textContent='Loading the map…';
     try{
       var response=await fetch('assets/interactive_map.gz');
       if(!response.ok)throw new Error('Map asset HTTP '+response.status);
       if(!('DecompressionStream' in window))throw new Error('Browser lacks gzip decompression support');
       var bin=new Uint8Array(await response.arrayBuffer());
       var html=await new Response(new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
-      if(frame){frame.src='about:blank';frame.remove();frame=null;}
+      if(frame)frame.remove();
       frame=document.createElement('iframe');frame.title='Interactive 3D map of Arkaedon';frame.setAttribute('allow','fullscreen');frame.srcdoc=html;
-      frame.addEventListener('load',function(){poster.hidden=true;rel.hidden=false;hint.textContent='Map loaded';});
-      body.appendChild(frame);
+      await new Promise(function(resolve){
+        frame.addEventListener('load',resolve,{once:true});
+        body.appendChild(frame);
+      });
+      poster.hidden=true;rel.hidden=false;hint.textContent='Map loaded';
     }catch(e){
       btn.disabled=false;btn.textContent='Try again';hint.textContent='The map could not start. Try a modern browser and open the website over HTTPS.';console.error('Interactive map failed:',e);
+    }finally{
+      busy=false;rel.disabled=false;
     }
-    busy=false;
   }
   btn.addEventListener('click',load);
-  rel.addEventListener('click',function(){poster.hidden=false;btn.disabled=false;btn.textContent='Launch the map';load()});
+  rel.addEventListener('click',function(){if(busy)return;poster.hidden=false;load()});
   full.addEventListener('click',function(){
     if(document.fullscreenElement){document.exitFullscreen();return}
     var f=win.requestFullscreen||win.webkitRequestFullscreen;
