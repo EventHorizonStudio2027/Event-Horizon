@@ -64,7 +64,7 @@ section:first-child{padding-top:5rem}
 
 .hero{position:relative;display:flex;align-items:flex-end;min-height:calc(100vh - 5rem);padding-bottom:3.5rem}.hero::after{content:"";position:absolute;inset:-2rem -60vw 0 -60vw;background:linear-gradient(to top,var(--bg) 6%,color-mix(in srgb,var(--bg) 55%,transparent) 38%,transparent 62%);z-index:1;pointer-events:none}.hero>div:first-child{position:relative;z-index:2;max-width:48rem}
 .hero p.lead{font-size:1.3rem;margin-top:1.5rem;max-width:42rem}
-.bh{position:absolute;aspect-ratio:1;width:min(1000px,125vw);right:-18%;top:-6%;z-index:0;pointer-events:none}
+.bh{position:absolute;aspect-ratio:1;width:min(1000px,125vw);right:-18%;top:-6%;z-index:0;pointer-events:none;filter:opacity(.48)}
 .bh .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 5%,var(--a),var(--b),var(--c),transparent 85%);-webkit-mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);animation:spin 12s linear infinite;filter:blur(1px)}
 .bh .ring.two{inset:-3%;transform:rotateX(72deg);opacity:.9;animation-duration:9s;animation-direction:reverse}
 .bh .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 40%,transparent),transparent 65%);filter:blur(30px);animation:pulse 5s ease-in-out infinite}
@@ -135,7 +135,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media (max-width:1000px){.principles,.steps{grid-template-columns:1fr}.intro{grid-template-columns:1fr;gap:1rem}.foot{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr;min-height:0}.bh{width:min(300px,70%)}.stats{grid-template-columns:repeat(2,1fr)}.bento{grid-template-columns:repeat(2,1fr)}.flag{grid-column:span 2}.g3{grid-template-columns:1fr}}
 @media (max-width:760px){
   .cr{display:none}
-  .bh{width:150vw;right:-62%;top:-14%;opacity:.38}.hero p.lead{color:var(--text);opacity:.85}.hero{min-height:calc(100svh - 4rem)}
+  .bh{width:150vw;right:-62%;top:-14%;filter:opacity(.34)}.hero p.lead{color:var(--text);opacity:.85}.hero{min-height:calc(100svh - 4rem)}
   .g2,.bento{grid-template-columns:1fr}.flag,.span2{grid-column:auto}
   .row{grid-template-columns:2.5rem 1fr 1.5rem}.row p{display:none}
 }
