@@ -795,14 +795,8 @@ Your browser does not support embedded video.
     if(!entries.some(function(entry){return entry.isIntersecting&&entry.intersectionRatio===1}))return;
     observer.disconnect();
     if(requestedSound||!video.paused||video.ended||video.currentTime!==0)return;
-    video.play().catch(function(error){
-      if(error.name!=='NotAllowedError'||requestedSound||!video.paused)return;
-      video.muted=true;
-      video.play().catch(function(){
-        if(!requestedSound)video.muted=false;
-        syncSoundButton();
-      });
-    });
+    video.muted=false;
+    video.play().catch(syncSoundButton);
   },{threshold:1});
   observer.observe(video);
 })();
