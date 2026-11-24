@@ -365,11 +365,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @container (max-width: 420px) {
   #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
-:is(#ai-wallet, #cloutflow) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
-:is(#ai-wallet, #cloutflow) .app-card-heading img { display: block; flex: none; }
-:is(#ai-wallet, #cloutflow) h3 { margin: 0 0 .25rem; }
-:is(#ai-wallet, #cloutflow) .app-card-action { margin-top: auto; padding-top: .85rem; }
-:is(#ai-wallet, #cloutflow) .btn { padding: .5rem .8rem; }
+:is(#ai-wallet, #cloutflow, #preview) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
+:is(#ai-wallet, #cloutflow, #preview) .app-card-heading img { display: block; flex: none; }
+:is(#ai-wallet, #cloutflow, #preview) h3 { margin: 0 0 .25rem; }
+:is(#ai-wallet, #cloutflow, #preview) .app-card-action { margin-top: auto; padding-top: .85rem; }
+:is(#ai-wallet, #cloutflow, #preview) .btn { padding: .5rem .8rem; }
 .portfolio-card h3 { margin: .8rem 0 .4rem; }
 .more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
 </style>
@@ -620,9 +620,12 @@ Your browser does not support embedded video.
 <p>Discover people and venues with opt-in presence, mutual matches, and chat.</p>
 </article>
 <article class="card rv portfolio-card" id="preview">
-<span class="tag">In development</span>
-<h3>preVIEW</h3>
-<p>Share interactive previews of games and apps that people can try in their browser.</p>
+<div class="app-card-heading">
+<img src="assets/preview-icon.png" alt="" width="48" height="48" loading="lazy"/>
+<div><h3>preVIEW</h3><span class="tag">In development</span></div>
+</div>
+<p>Turn your app into a short, interactive demo that people can try in their browser.</p>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/preVIEW/#overview">Open preVIEW <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="card rv portfolio-card" id="crowdcode">
 <span class="tag">In development</span>
