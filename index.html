@@ -365,11 +365,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @container (max-width: 420px) {
   #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft) .app-card-heading img { display: block; flex: none; width: 48px; height: 48px; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 22%; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft) h3 { margin: 0 0 .25rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft) .app-card-action { margin-top: auto; padding-top: .85rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft) .btn { padding: .5rem .8rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-heading img { display: block; flex: none; width: 48px; height: 48px; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 22%; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) h3 { margin: 0 0 .25rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-action { margin-top: auto; padding-top: .85rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .btn { padding: .5rem .8rem; }
 .portfolio-card h3 { margin: .8rem 0 .4rem; }
 .more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
 </style>
@@ -639,9 +639,12 @@ Your browser does not support embedded video.
 <div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/CrowdCraft/">Open CrowdCraft <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="card rv portfolio-card" id="social-eyes">
-<span class="tag">In development</span>
-<h3>Social Eyes</h3>
+<div class="app-card-heading">
+<img src="assets/social-eyes-icon.svg" alt="" width="48" height="48" loading="lazy"/>
+<div><h3>Social Eyes</h3><span class="tag">In development</span></div>
+</div>
 <p>Discover people and venues with opt-in presence, mutual matches, and chat.</p>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/Social-Eyes/#home">Open Social Eyes <span aria-hidden="true">↗</span></a></div>
 </article>
 </div>
 </section>
