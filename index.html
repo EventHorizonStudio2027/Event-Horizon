@@ -366,7 +366,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
 :is(#ai-wallet, #cloutflow, #preview) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
-:is(#ai-wallet, #cloutflow, #preview) .app-card-heading img { display: block; flex: none; }
+:is(#ai-wallet, #cloutflow, #preview) .app-card-heading img { display: block; flex: none; width: 48px; height: 48px; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 22%; }
 :is(#ai-wallet, #cloutflow, #preview) h3 { margin: 0 0 .25rem; }
 :is(#ai-wallet, #cloutflow, #preview) .app-card-action { margin-top: auto; padding-top: .85rem; }
 :is(#ai-wallet, #cloutflow, #preview) .btn { padding: .5rem .8rem; }
@@ -418,8 +418,8 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <summary aria-label="Apps" data-section="apps"><svg viewbox="0 0 24 24"><rect height="20" rx="3" width="10" x="7" y="2"></rect><path d="M11 18h2"></path></svg><span class="rail-label">Apps</span></summary>
 <div class="rail-items">
 <a href="#apps">All apps</a>
-<a href="#ai-wallet">domAIn</a>
 <a href="#cloutflow">CloutFlow</a>
+<a href="#ai-wallet">domAIn</a>
 <a href="#preview">preVIEW</a>
 <a href="#crowdcode">CrowdCode</a>
 <a href="#crowdcraft">CrowdCraft</a>
@@ -598,14 +598,6 @@ Your browser does not support embedded video.
 <section id="apps">
 <div class="head rv"><span class="mono">Software</span><h2>Apps and platforms <span class="grad">in development.</span></h2></div>
 <div class="g3">
-<article class="card rv portfolio-card" id="ai-wallet">
-<div class="app-card-heading">
-<img src="assets/ai-wallet-icon.svg" alt="" width="48" height="48" loading="lazy"/>
-<div><h3>domAIn</h3><span class="tag">In development</span></div>
-</div>
-<p>Manage AI accounts, subscriptions, renewals, and generated files in one place.</p>
-<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/AI-Wallet/">Open domAIn <span aria-hidden="true">↗</span></a></div>
-</article>
 <article class="card rv portfolio-card" id="cloutflow">
 <div class="app-card-heading">
 <img src="assets/cloutflow.svg" alt="" width="48" height="48" loading="lazy"/>
@@ -613,6 +605,14 @@ Your browser does not support embedded video.
 </div>
 <p>Track creator earnings, platform fees, and payouts across streaming, memberships, and storefronts.</p>
 <div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/CloutFlow/">Open CloutFlow <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="card rv portfolio-card" id="ai-wallet">
+<div class="app-card-heading">
+<img src="assets/ai-wallet-icon.svg" alt="" width="48" height="48" loading="lazy"/>
+<div><h3>domAIn</h3><span class="tag">In development</span></div>
+</div>
+<p>Manage AI accounts, subscriptions, renewals, and generated files in one place.</p>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/AI-Wallet/">Open domAIn <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="card rv portfolio-card" id="preview">
 <div class="app-card-heading">
