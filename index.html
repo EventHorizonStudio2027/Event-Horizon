@@ -256,16 +256,15 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   position:relative;
   left:50%;
   transform:translateX(-50%);
-  width:calc(2 * var(--showcase-original-width));
+  width:calc(2.4 * var(--showcase-original-width));
   margin:1.4rem 0;
   padding:clamp(.3rem,.8vw,.6rem);
   border:1px solid rgba(255,190,105,.2);
   border-radius:14px;
   background:#101018;
 }
-.eh-cinema-grid{display:flex;align-items:center;gap:clamp(.34rem,.8vw,.68rem)}
+.eh-cinema-grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(.34rem,.8vw,.68rem)}
 .eh-cinema video{
-  order:-1;
   display:block;
   width:min(256px,var(--showcase-original-inner-width) * .52);flex-shrink:0;
   aspect-ratio:480/756;
@@ -276,8 +275,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .eh-cinema h2{font-size:clamp(1rem,2vw,1.48rem);margin:0 0 .28rem}
 .eh-cinema p{font-size:.8rem;margin:0;color:#ffc78d}
 @media (max-width:600px){
-  .eh-cinema-grid{flex-direction:column;align-items:stretch}
-  .eh-cinema video{order:0;width:min(128px,var(--showcase-original-inner-width));align-self:center}
+  .eh-cinema video{width:min(128px,var(--showcase-original-inner-width))}
 }
 .fates-trailer{width:min(100%,57.2rem);margin:1.5rem auto 2rem}
 .fates-trailer h3{margin:0 0 .65rem}
@@ -428,7 +426,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <div class="eh-cinema-grid">
 <div><h2 id="cinema-title">Beyond the Horizon</h2>
 <p>Creativity at the Edge</p></div>
-<video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls muted playsinline preload="metadata">
+<video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
 <source src="assets/creativity-at-the-edge.mp4" type="video/mp4"/>
 Your browser does not support embedded video.
 </video>
