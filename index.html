@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
@@ -12,7 +12,7 @@
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#05060b;--glass:rgba(255,255,255,.035);--glass2:rgba(255,255,255,.07);--line:rgba(255,255,255,.09);--text:#f2f4fa;--mut:#8d96b3;--a:#ffb347;--b:#4fe3d0;--c:#8f7bff;--ink:#05060b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f5fb;--glass:rgba(255,255,255,.75);--glass2:rgba(255,255,255,.95);--line:rgba(15,20,50,.1);--text:#0c1128;--mut:#505a7e;--a:#b86a00;--b:#0a7c70;--c:#5a45d8;--ink:#fff;--ga:#e8890c;--gb:#0fb5a3;--gc:#6a55f0;color-scheme:light}}
@@ -27,7 +27,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .aurora i:nth-child(2){width:36vw;height:36vw;background:var(--a);top:30%;right:-10%;animation-delay:-8s}
 .aurora i:nth-child(3){width:34vw;height:34vw;background:var(--b);bottom:-15%;left:30%;animation-delay:-14s;opacity:.25}
 @keyframes float{to{transform:translate(6vw,5vh) scale(1.15)}}
-h1,h2,h3{font-family:Sora,system-ui,sans-serif;margin:0 0 .5em;line-height:1.05;letter-spacing:-.035em}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;margin:0 0 .5em;line-height:1.05;letter-spacing:-.035em}
 h1{font-size:clamp(2.8rem,6.6vw,5.8rem);font-weight:700}
 h2{font-size:clamp(1.9rem,4vw,3.2rem);font-weight:600}
 h3{font-size:1.1rem;font-weight:600;letter-spacing:-.01em}
@@ -106,7 +106,7 @@ section:first-child{padding-top:5rem}
 
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
 .stat{background:var(--bg);padding:clamp(.65rem,3.3vw,1.8rem) clamp(.55rem,3vw,1.6rem);overflow-wrap:anywhere}
-.stat b{display:block;font:600 clamp(2.4rem,4vw,3.4rem) Sora,sans-serif;letter-spacing:-.04em;line-height:1}
+.stat b{display:block;font:600 clamp(2.4rem,4vw,3.4rem) "Space Grotesk",sans-serif;letter-spacing:-.04em;line-height:1}
 .stat span{display:block;margin-top:.7rem;color:var(--mut);font-size:.88rem}
 
 .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(190px,auto);gap:1rem}
@@ -123,8 +123,8 @@ section:first-child{padding-top:5rem}
 .skills span{font-size:.78rem;padding:.28rem .65rem;border-radius:8px;background:var(--glass2);border:1px solid var(--line);color:var(--text)}
 .hud{border-radius:16px;background:color-mix(in srgb,var(--text) 6%,var(--bg));border:1px solid var(--line);padding:1rem}
 .hud-top{display:flex;gap:.8rem;align-items:center;margin-bottom:.8rem}
-.av{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--a),var(--c));display:grid;place-items:center;font:700 1.1rem Sora,sans-serif;color:var(--ink)}
-.hud-top b{display:block;font:600 .95rem Sora,sans-serif}.hud-top small{color:var(--mut);font-size:.78rem}
+.av{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--a),var(--c));display:grid;place-items:center;font:700 1.1rem "Space Grotesk",sans-serif;color:var(--ink)}
+.hud-top b{display:block;font:600 .95rem "Space Grotesk",sans-serif}.hud-top small{color:var(--mut);font-size:.78rem}
 .lbl{display:flex;justify-content:space-between;font-size:.75rem;color:var(--mut)}
 .bar{height:6px;border-radius:9px;background:var(--glass2);margin:.3rem 0 .7rem;overflow:hidden}.bar i{display:block;height:100%;border-radius:9px;transform-origin:left;animation:fill 1.6s cubic-bezier(.2,.8,.2,1) both .4s}
 @keyframes fill{from{transform:scaleX(0)}}
@@ -158,7 +158,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}.step{padding:1.4rem 1.5rem;border-radius:18px;border:1px solid var(--line);background:var(--glass)}.step .mono{display:block;margin-bottom:.9rem}.step h3{margin-bottom:.3rem}.step p{margin:0;font-size:.9rem}
 .inq{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}.inq a{padding:.45rem .9rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-size:.85rem;text-decoration:none;color:var(--text);transition:border-color .2s}.inq a:hover{border-color:var(--b)}
 .foot{margin-top:5rem;padding:3rem 0 2.5rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem;font-size:.9rem}
-.foot b{display:block;font:700 1.1rem Sora,sans-serif;margin-bottom:.6rem;letter-spacing:-.02em}.foot p{font-size:.88rem}
+.foot b{display:block;font:700 1.1rem "Space Grotesk",sans-serif;margin-bottom:.6rem;letter-spacing:-.02em}.foot p{font-size:.88rem}
 .foot h4{margin:0 0 .9rem;font:500 .68rem "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 .foot a{display:block;text-decoration:none;color:var(--text);margin-bottom:.5rem;opacity:.85;transition:opacity .2s,color .2s}.foot a:hover{opacity:1;color:var(--b)}
 .legal{grid-column:1/-1;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--mut);font-size:.8rem}
@@ -183,7 +183,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .facts5{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:1rem 0 2.2rem}
 .facts5 div{background:var(--bg);padding:1.1rem 1.3rem}
 .facts5 dt{font:500 .68rem "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:.3rem}
-.facts5 dd{margin:0;font:600 1.05rem Sora,sans-serif;letter-spacing:-.01em}
+.facts5 dd{margin:0;font:600 1.05rem "Space Grotesk",sans-serif;letter-spacing:-.01em}
 .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.4rem;padding:.35rem;border:1px solid var(--line);border-radius:999px;width:max-content;max-width:100%;background:var(--glass)}
 .tabs button{font:500 .92rem Inter,sans-serif;color:var(--mut);background:none;border:0;padding:.6rem 1.2rem;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
 .tabs button:hover{color:var(--text)}
@@ -213,7 +213,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .mw-bar{display:flex;align-items:center;gap:1rem;padding:.65rem 1rem;background:var(--glass2);border-bottom:1px solid var(--line);color:var(--text);backdrop-filter:blur(14px)}
 .mw-bar .dots{display:flex;gap:.4rem}.mw-bar .dots i{width:11px;height:11px;border-radius:50%;background:var(--line)}
 .mw-bar .dots i:first-child{background:#ff6b6b}.mw-bar .dots i:nth-child(2){background:#ffb347}.mw-bar .dots i:nth-child(3){background:#4fe3d0}
-.mw-title{font:500 .85rem Sora,sans-serif;flex:1;text-align:center;color:var(--mut)}
+.mw-title{font:500 .85rem "Space Grotesk",sans-serif;flex:1;text-align:center;color:var(--mut)}
 .mw-bar button{font:500 .8rem Inter,sans-serif;color:var(--text);background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;cursor:pointer;transition:border-color .2s}
 .mw-bar button:hover{border-color:var(--b)}
 .mw-body{position:relative;aspect-ratio:16/10;min-height:520px;max-height:82vh;background:#0b1118}
@@ -231,10 +231,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .petal:hover{border-color:#6cc04a}.petal::before{display:none}
 .petal .tag{color:#2f7a2a;border-color:rgba(47,122,42,.45);background:rgba(255,255,255,.6)}
 .petal .logo{display:block;width:100%;height:auto;max-width:430px;margin:0 auto;filter:drop-shadow(0 8px 12px rgba(40,90,30,.28))}
-.pill{margin:0;background:#fff;border:3px solid #9bd466;border-radius:999px;padding:.7rem 1.3rem;text-align:center;font:700 1rem/1.35 Sora,sans-serif;color:#2f6b2a;max-width:none}
+.pill{margin:0;background:#fff;border:3px solid #9bd466;border-radius:999px;padding:.7rem 1.3rem;text-align:center;font:700 1rem/1.35 "Space Grotesk",sans-serif;color:#2f6b2a;max-width:none}
 .ctrls{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:auto}
 .ctrl{background:rgba(255,255,255,.9);border-radius:16px;padding:.7rem .3rem;text-align:center;box-shadow:0 3px 0 #b5dd8c}
-.ctrl i{font-style:normal;font-size:1.5rem;display:block;line-height:1.3}.ctrl b{display:block;color:#d6456f;font:700 .86rem Sora,sans-serif}.ctrl span{font-size:.74rem;color:#5b6b58}
+.ctrl i{font-style:normal;font-size:1.5rem;display:block;line-height:1.3}.ctrl b{display:block;color:#d6456f;font:700 .86rem "Space Grotesk",sans-serif}.ctrl span{font-size:.74rem;color:#5b6b58}
 .card.wide{grid-column:span 2}
 @media (max-width:1000px){.petal{grid-column:1/-1;grid-row:auto}}
 @media (max-width:760px){.card.wide{grid-column:auto}}
@@ -247,10 +247,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .pf-info .pill{margin:0}
 .pf-info .ctrls{margin-top:0}
 .chips2{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-.chips2 span{background:rgba(255,255,255,.85);border-radius:999px;padding:.4rem .85rem;font:600 .82rem Sora,sans-serif;color:#2f6b2a;box-shadow:0 2px 0 #b5dd8c}
+.chips2 span{background:rgba(255,255,255,.85);border-radius:999px;padding:.4rem .85rem;font:600 .82rem "Space Grotesk",sans-serif;color:#2f6b2a;box-shadow:0 2px 0 #b5dd8c}
 .pf-shot{position:relative;min-height:380px;background:#7fb3d9}
 .pf-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.pf-shot figcaption{position:absolute;left:1rem;bottom:1rem;right:1rem;font:600 .82rem Sora,sans-serif;color:#fff;background:rgba(10,24,10,.62);backdrop-filter:blur(8px);border-radius:999px;padding:.55rem 1.1rem;width:max-content;max-width:100%}
+.pf-shot figcaption{position:absolute;left:1rem;bottom:1rem;right:1rem;font:600 .82rem "Space Grotesk",sans-serif;color:#fff;background:rgba(10,24,10,.62);backdrop-filter:blur(8px);border-radius:999px;padding:.55rem 1.1rem;width:max-content;max-width:100%}
 .pf-shot{margin:0}
 .bento.three{grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(170px,auto)}
 @media (max-width:1000px){.pf{grid-template-columns:1fr}.pf-shot{min-height:0;aspect-ratio:16/11}.bento.three{grid-template-columns:repeat(2,1fr)}.bento.three .card:last-child{grid-column:1/-1}}
@@ -260,12 +260,12 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .cm-info{display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start}
 .cm .tag{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.12)}
 .cm .logo{display:block;width:100%;height:auto;max-width:400px;filter:drop-shadow(0 10px 18px rgba(20,0,60,.45))}
-.cm .pill2{margin:0;max-width:none;color:#fff;font:700 1.15rem/1.2 Sora,sans-serif;padding:.85rem 1.6rem;border-radius:999px;background:linear-gradient(#ff7ac8,#ec3f9d);box-shadow:0 4px 0 #b0236f,0 12px 24px -8px rgba(0,0,0,.45);transform:rotate(-2deg);text-shadow:0 2px 0 rgba(120,0,70,.45)}
+.cm .pill2{margin:0;max-width:none;color:#fff;font:700 1.15rem/1.2 "Space Grotesk",sans-serif;padding:.85rem 1.6rem;border-radius:999px;background:linear-gradient(#ff7ac8,#ec3f9d);box-shadow:0 4px 0 #b0236f,0 12px 24px -8px rgba(0,0,0,.45);transform:rotate(-2deg);text-shadow:0 2px 0 rgba(120,0,70,.45)}
 .badges{display:flex;flex-wrap:wrap;gap:.5rem}
-.badges span{font:700 .8rem Sora,sans-serif;padding:.45rem .9rem;border-radius:999px;color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.28)}
+.badges span{font:700 .8rem "Space Grotesk",sans-serif;padding:.45rem .9rem;border-radius:999px;color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.28)}
 .badges .b1{background:#f3a328}.badges .b2{background:#2fae7a}.badges .b3{background:#5a74e8}
 .cm-btns{display:flex;flex-wrap:wrap;gap:.6rem}
-.cm-btns span{font:700 .95rem Sora,sans-serif;padding:.6rem 1.2rem;border-radius:999px;background:linear-gradient(#9b7bff,#6f4be0);border:2px solid rgba(255,255,255,.75);box-shadow:0 3px 0 #3b21a0}
+.cm-btns span{font:700 .95rem "Space Grotesk",sans-serif;padding:.6rem 1.2rem;border-radius:999px;background:linear-gradient(#9b7bff,#6f4be0);border:2px solid rgba(255,255,255,.75);box-shadow:0 3px 0 #3b21a0}
 .cm-art{position:relative;display:grid;place-items:center;min-height:260px}
 .cm-art::before{content:"";position:absolute;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.4),transparent 65%);filter:blur(10px)}
 .cm-art img{position:relative;width:100%;max-width:460px;height:auto;filter:drop-shadow(0 16px 20px rgba(20,0,60,.45));animation:bob 5s ease-in-out infinite}
@@ -275,46 +275,6 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media (max-width:760px){.bento.two{grid-template-columns:1fr}.cm .pill2{font-size:1rem}}
 </style>
 <style>
-.eh-cinema{
-  position:relative;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(88.32rem,96cqw - clamp(1.44rem,4.8vw,2.88rem));
-  margin:1.4rem 0;
-  padding:clamp(1rem,3vw,2.75rem);
-  border:1px solid rgba(255,190,105,.24);
-  border-radius:18px;
-  background:radial-gradient(ellipse at top left,rgba(143,123,255,.13),transparent 65%),#101018;
-}
-.eh-cinema h2{
-  margin:0 0 clamp(1rem,3vw,2rem);
-  font-size:clamp(1.5rem,3vw,2.65rem);
-  color:#f7f1ff;
-}
-.eh-cinema-feature{
-  width:min(100%,22rem);
-  margin:0 auto;
-}
-.eh-cinema video{
-  display:block;
-  width:100%;
-  height:auto;
-  aspect-ratio:480/756;
-  object-fit:contain;
-  background:#000;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-}
-.eh-cinema figcaption{
-  margin:.75rem 0 0;
-  text-align:right;
-  font:500 clamp(.8rem,1.6vw,1rem)/1.4 Inter,system-ui,sans-serif;
-  letter-spacing:.035em;
-  color:#ffc78d;
-}
-@media (max-width:600px){
-  .eh-cinema-feature{width:min(100%,14rem)}
-}
 #channels .live-stream-card{border-color:rgba(255,179,71,.38);background:linear-gradient(145deg,rgba(255,179,71,.09),var(--glass) 62%)}
 #channels .stream-label{display:block;margin:0 0 .65rem;color:#ffc78d}
 .fates-trailer{width:min(100%,57.2rem);margin:1.5rem auto 2rem}
@@ -376,7 +336,9 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media(max-width:680px){.more-games-grid{grid-template-columns:minmax(0,1fr)}}
 .spec-name{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .spec .spec-emblem{width:clamp(32px,5vw,48px);height:auto;min-height:0;object-fit:contain;border:0;border-radius:0;flex:none}
-</style></head>
+</style>
+<link rel="stylesheet" href="assets/studio.css"/>
+</head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
 <div aria-hidden="true" class="aurora"><i></i><i></i><i></i></div>
@@ -439,7 +401,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </nav>
 <main><div class="page">
 <section id="overview">
-<div class="eh-wordmark-top" aria-label="Event Horizon Studios"><img alt="Event Horizon Studios" src="assets/media_03.webp" decoding="async" fetchpriority="high"></div>
+<h1 class="eh-wordmark-top"><img alt="Event Horizon Studios" src="assets/media_03.webp" decoding="async" fetchpriority="high"></h1>
 
 <div class="hero">
 <div>
@@ -456,25 +418,28 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div>
 </section>
 <section aria-labelledby="cinema-title" class="eh-cinema" id="cinematic-showcase">
+<div class="eh-cinema-copy">
 <h2 id="cinema-title">Beyond the Horizon</h2>
-<figure class="eh-cinema-feature">
+<p>Creativity at the Edge</p>
+</div>
+<div class="eh-cinema-feature">
 <video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
 <source src="assets/creativity-at-the-edge.mp4" type="video/mp4"/>
 Your browser does not support embedded video.
 </video>
-<figcaption>Creativity at the Edge</figcaption>
-</figure>
+</div>
 </section>
 <section id="studio">
-<div class="intro rv"><div><span class="mono" style="display:block;margin-bottom:1.1rem">01 · Studio</span><h2>Small team. <span class="grad">Clear standards.</span></h2></div><p>We make games, media and software under one roof, and we hold all of it to the same bar: finish what we start, show the real process, and respect the people who use what we build.</p></div>
+<div class="intro rv"><div><span class="mono" style="display:block;margin-bottom:1.1rem">Studio</span><h2>Small team. <span class="grad">Clear standards.</span></h2></div><p>We make games, media and software under one roof, and we hold all of it to the same bar: finish what we start, show the real process, and respect the people who use what we build.</p></div>
 <div class="principles rv">
-<div class="principle"><span class="mono">A</span><h3>Expression over spend</h3><p>Our flagship game is built around who you choose to become, not around paying to win.</p></div>
-<div class="principle"><span class="mono">B</span><h3>Built in public</h3><p>On New Clear Gaming we show how our games and tools are made, wins and bugs included.</p></div>
-<div class="principle"><span class="mono">C</span><h3>Small by design</h3><p>We take on a limited number of projects at a time, so each one gets real attention.</p></div>
+<div class="principle"><h3>Expression over spend</h3><p>Our flagship game is built around who you choose to become, not around paying to win.</p></div>
+<div class="principle"><h3>Built in public</h3><p>On New Clear Gaming we show how our games and tools are made, wins and bugs included.</p></div>
+<div class="principle"><h3>Small by design</h3><p>We take on a limited number of projects at a time, so each one gets real attention.</p></div>
 </div>
 </section>
 <section id="game">
-<div class="gh rv"><img alt="Fate’s Passage emblem: the letters F and P inside a golden hexagon with a compass star" height="92" src="assets/media_06.webp" width="92"/><div><span class="mono" style="display:block;margin-bottom:.7rem">02 · Flagship</span><h2>Fate’s Passage</h2></div></div>
+<div class="gh rv"><img alt="Fate’s Passage emblem: the letters F and P inside a golden hexagon with a compass star" height="92" src="assets/media_06.webp" width="92"/><div><span class="mono" style="display:block;margin-bottom:.7rem">Flagship</span><h2>Fate’s Passage</h2></div></div>
+<div class="flagship-media">
 <div class="cine rv">
 <picture>
 <source media="(max-width:760px)" srcset="assets/media_07.webp"/>
@@ -491,6 +456,7 @@ Your browser does not support embedded video.
 <source src="assets/fates-passage-trailer-hd.mp4" type="video/mp4"/>
 <a href="assets/fates-passage-trailer-hd.mp4">Watch the trailer</a>
 </video>
+</div>
 </div>
 <dl class="facts5 rv">
 <div><dt>Genre</dt><dd>Fantasy MMORPG</dd></div>
@@ -534,7 +500,7 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="games" style="padding-top:2rem">
-<div class="head rv"><span class="mono">03 · More games</span><h2>Four more, <span class="grad">from the same studio.</span></h2></div>
+<div class="head rv"><span class="mono">More games</span><h2>Four more, <span class="grad">from the same studio.</span></h2></div>
 <div class="more-games-grid">
 <article class="pf rv" id="petal">
 <div class="pf-info">
@@ -550,7 +516,7 @@ Your browser does not support embedded video.
 </div>
 <div aria-label="Features" class="chips2"><span>🌸 Flower counter</span><span>🪙 Coins</span><span>🧺 Bag</span><span>🏪 Petal Shop</span></div>
 </div>
-<figure class="pf-shot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
+<figure class="pf-shot"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
 </article>
 <article class="cm rv" id="cupcake">
 <div class="cm-info">
@@ -569,7 +535,7 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="apps">
-<div class="head rv"><span class="mono">04 · Software</span><h2>Three apps, <span class="grad">in development.</span></h2></div>
+<div class="head rv"><span class="mono">Software</span><h2>Three apps, <span class="grad">in development.</span></h2></div>
 <div class="g3">
 <div class="card rv" id="ai-wallet"><div class="ico">👛</div><span class="tag" style="margin-top:1.4rem">In development</span><h3 style="margin-top:.8rem">AI Wallet+</h3><p class="soon">App · Announcement soon</p></div>
 <div class="card rv d1" id="cloutflow"><div class="ico">🌊</div><span class="tag" style="margin-top:1.4rem">In development</span><h3 style="margin-top:.8rem">CloutFlow</h3><p class="soon">App · Announcement soon</p></div>
@@ -577,14 +543,14 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="channels">
-<div class="head rv"><span class="mono">05 · Media</span><h2>Live streaming <span class="grad">and reactions.</span></h2></div>
+<div class="head rv"><span class="mono">Media</span><h2>Live streaming <span class="grad">and reactions.</span></h2></div>
 <div class="g2">
 <div class="card rv live-stream-card" id="new-clear-gaming"><div class="ico" aria-hidden="true">🎮</div><span class="mono stream-label">Live gameplay &amp; development</span><h3>New Clear Gaming</h3><p>Watch us play games and build them live. Join us for gameplay sessions and live looks at how Event Horizon Studios makes its games and tools.</p></div>
 <div class="card rv d1" id="new-clear-reactions"><div class="ico">🎧</div><h3>New Clear Reactions</h3><p>Music, TV and comedy reactions. A separate home for entertainment, with its own voice.</p></div>
 </div>
 </section>
 <section id="build">
-<div class="head rv"><span class="mono">06 · Services</span><h2>Custom work, <span class="grad">clearly scoped.</span></h2><p>A limited number of projects at a time. Defined scope and price before we start.</p></div>
+<div class="head rv"><span class="mono">Services</span><h2>Custom work, <span class="grad">clearly scoped.</span></h2><p>A limited number of projects at a time. Defined scope and price before we start.</p></div>
 <div class="steps rv">
 <div class="step"><span class="mono">Step 1</span><h3>Scope</h3><p>We agree what is being built and what it costs before any work starts.</p></div>
 <div class="step"><span class="mono">Step 2</span><h3>Build</h3><p>Focused work on a limited number of projects, so yours gets real attention.</p></div>
@@ -664,11 +630,6 @@ Your browser does not support embedded video.
   if(!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   rv.forEach(function(e){io.observe(e)});
-  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.stat b').forEach(function(b){var n=+b.dataset.n,t0=null;b.textContent='0';
-      var co=new IntersectionObserver(function(es){if(es[0].isIntersecting){co.disconnect();(function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(b.dataset.s||'');if(p<1)requestAnimationFrame(f)})(performance.now())}});co.observe(b)});
-  }
 })();
 </script>
 <script>
