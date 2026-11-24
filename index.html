@@ -251,12 +251,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <style>
 .eh-cinema{margin:2.5rem 0;padding:clamp(1rem,3vw,2.5rem);border:1px solid rgba(255,190,105,.24);border-radius:24px;background:linear-gradient(135deg,rgba(30,19,26,.96),rgba(8,12,25,.98));box-shadow:0 24px 70px rgba(0,0,0,.3)}
 .eh-cinema-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(1rem,3vw,2rem);align-items:center}
-.eh-cinema-art{width:100%;max-height:350px;object-fit:cover;object-position:center;border-radius:16px}
-.eh-cinema video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#000;border-radius:16px;display:block}
+@media(max-width:760px){.eh-cinema-grid{grid-template-columns:1fr}}
+.eh-cinema video{width:min(100%,24rem);margin-inline:auto;aspect-ratio:480/756;object-fit:contain;background:#000;border-radius:16px;display:block}
 .eh-cinema h2{font-size:clamp(1.4rem,3vw,2.4rem);margin:.5rem 0}
 .eh-cinema p{line-height:1.65;opacity:.82}
 .eh-cinema-kicker{letter-spacing:.2em;text-transform:uppercase;color:#ffc78d;font-size:.75rem}
-@media(max-width:760px){.eh-cinema-grid{grid-template-columns:1fr}.eh-cinema-art{max-height:220px}}
 </style><style id="eh-nebula-background-addition">
 /* Event Horizon artwork: sharper, larger and more visible; all existing site styles untouched. */
 .aurora::before{
@@ -378,10 +377,14 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div>
 </section>
 <section aria-labelledby="cinema-title" class="eh-cinema" id="cinematic-showcase">
-<div class="eh-cinema-grid"><div><img alt="Event Horizon black hole artwork" class="eh-cinema-art" src="assets/media_04.webp"/>
-<p class="eh-cinema-kicker">Event Horizon Studios · Featured media</p><h2 id="cinema-title">Beyond the Horizon</h2>
-<p>Explore our cinematic identity in motion. Press play to experience the original studio video.</p></div>
-<div><video aria-label="Event Horizon Studios cinematic logo video" controls="" playsinline="" preload="none"><source src="assets/media_05.mp4" type="video/mp4"/>Your browser does not support embedded video.</video></div></div></section>
+<div class="eh-cinema-grid">
+<div><p class="eh-cinema-kicker">Event Horizon Studios · Featured media</p><h2 id="cinema-title">Beyond the Horizon</h2>
+<p>Creativity at the Edge</p></div>
+<video aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
+<source src="assets/creativity-at-the-edge.mp4" type="video/mp4"/>
+Your browser does not support embedded video.
+</video>
+</div></section>
 <section id="studio">
 <div class="intro rv"><div><span class="mono" style="display:block;margin-bottom:1.1rem">01 · Studio</span><h2>Small team. <span class="grad">Clear standards.</span></h2></div><p>We make games, media and software under one roof, and we hold all of it to the same bar: finish what we start, show the real process, and respect the people who use what we build.</p></div>
 <div class="principles rv">
