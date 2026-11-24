@@ -250,7 +250,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </style>
 <style>
 .eh-cinema{
-  width:min(100%,23rem);
+  width:min(100%,46rem);
   margin:1.75rem auto;
   padding:.75rem;
   border:1px solid rgba(255,190,105,.2);
@@ -261,13 +261,13 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .eh-cinema video{
   order:-1;
   display:block;
-  width:min(88px,38%);
+  width:min(176px,46%);flex-shrink:0;
   aspect-ratio:480/756;
   object-fit:contain;
   background:#000;
   border-radius:8px;
 }
-.eh-cinema h2{font-size:1rem;margin:0 0 .35rem}
+.eh-cinema h2{font-size:clamp(1.15rem,3vw,1.85rem);margin:0 0 .35rem}
 .eh-cinema p{font-size:.8rem;margin:0;color:#ffc78d}
 .fates-trailer{width:min(100%,44rem);margin:1.5rem auto 2rem}
 .fates-trailer h3{margin:0 0 .65rem}
@@ -416,7 +416,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <div class="eh-cinema-grid">
 <div><h2 id="cinema-title">Beyond the Horizon</h2>
 <p>Creativity at the Edge</p></div>
-<video aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
+<video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls muted playsinline preload="metadata">
 <source src="assets/creativity-at-the-edge.mp4" type="video/mp4"/>
 Your browser does not support embedded video.
 </video>
@@ -657,6 +657,18 @@ Your browser does not support embedded video.
     if(f){f.call(win)}else{body.style.minHeight='80vh'}
   });
   document.addEventListener('fullscreenchange',function(){full.textContent=document.fullscreenElement?'Exit full screen':'Full screen'});
+})();
+</script>
+<script>
+(function(){
+  var video=document.getElementById('studio-showcase-video');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var observer=new IntersectionObserver(function(entries){
+    if(!entries.some(function(entry){return entry.isIntersecting&&entry.intersectionRatio>=.5}))return;
+    observer.disconnect();
+    if(video.paused&&!video.ended&&video.currentTime===0)video.play().catch(function(){});
+  },{threshold:.5});
+  observer.observe(video);
 })();
 </script>
 </body>
