@@ -365,11 +365,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @container (max-width: 420px) {
   #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-heading img { display: block; flex: none; width: 48px; height: 48px; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 22%; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) h3 { margin: 0 0 .25rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .app-card-action { margin-top: auto; padding-top: .85rem; }
-:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes) .btn { padding: .5rem .8rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes, #recreated) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes, #recreated) .app-card-heading img { display: block; flex: none; width: 48px; height: 48px; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 22%; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes, #recreated) h3 { margin: 0 0 .25rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes, #recreated) .app-card-action { margin-top: auto; padding-top: .85rem; }
+:is(#ai-wallet, #cloutflow, #preview, #crowdcode, #crowdcraft, #social-eyes, #recreated) .btn { padding: .5rem .8rem; }
 .portfolio-card h3 { margin: .8rem 0 .4rem; }
 .more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
 </style>
@@ -389,6 +389,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .stream-platforms li { display: flex; align-items: center; gap: .35rem; padding: .23rem .45rem; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); font-size: .75rem; }
 .stream-platforms svg { flex: none; width: 1rem; height: 1rem; }
 </style>
+<style>#recreated .app-card-heading img { width: 64px; height: 64px; }</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -425,11 +426,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <summary aria-label="Games" data-section="games"><svg viewbox="0 0 24 24"><rect height="11" rx="4" width="18" x="3" y="7"></rect><path d="M8 10v5M5.5 12.5h5M16 11h.01M18 14h.01"></path></svg><span class="rail-label">Games</span></summary>
 <div class="rail-items">
 <a href="#games">All games</a>
+<a href="#recreated">Recreated</a>
 <a href="#petal">Petal 2 the Meadow</a>
 <a href="#cupcake">Mystery Cupcake Maker</a>
 <a href="#axolotl">Axolotl Go!</a>
 <a href="#monster-truck">Monster Truck Go!</a>
-<a href="#recreated">Recreated</a>
 <a href="#eat-your-veggies">Eat Your Veggies</a>
 </div>
 </details>
@@ -614,6 +615,14 @@ Your browser does not support embedded video.
 <section id="games" style="padding-top:2rem">
 <div class="head rv"><span class="mono">More games</span><h2>More games <span class="grad">from the studio.</span></h2></div>
 <div class="more-games-grid">
+<article class="card rv portfolio-card" id="recreated">
+<div class="app-card-heading">
+<img src="assets/recreated.webp" alt="" width="64" height="64" loading="lazy"/>
+<div><h3>Recreated</h3><span class="tag">In development</span></div>
+</div>
+<p>An action RPG set in an evolving world.</p>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/recreated/">Play Recreated <span aria-hidden="true">↗</span></a></div>
+</article>
 <article class="pf rv" id="petal">
 <div class="pf-info">
 <span class="tag">Game</span>
@@ -644,11 +653,6 @@ Your browser does not support embedded video.
 
 <article class="card rv" id="axolotl"><div class="ico">🦎</div><h3>Axolotl Go!</h3><p class="soon">Game · Announcement soon</p></article>
 <article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></article>
-<article class="card rv portfolio-card" id="recreated">
-<span class="tag">In development</span>
-<h3>Recreated</h3>
-<p>An action RPG set in an evolving world. The browser prototype comes first, with a Unity 2.5D version planned.</p>
-</article>
 <article class="card rv portfolio-card" id="eat-your-veggies">
 <span class="tag">In development</span>
 <h3>Eat Your Veggies</h3>
