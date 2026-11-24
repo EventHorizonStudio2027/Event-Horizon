@@ -54,10 +54,13 @@ h3 { line-height: 1.2; }
 #cinematic-showcase {
   width: 100%;
   margin: clamp(.9rem, 2.75cqw, 1.5rem) 0 0;
-  padding: clamp(.8rem, 3cqw, 1.65rem);
-  padding-inline-end: calc(clamp(.8rem, 3cqw, 1.65rem) + clamp(0px, 50cqw - 260px, 250px));
+  --showcase-inset: clamp(.8rem, 3cqw, 1.65rem);
+  --player-clearance: 4px;
+  --player-width-gain: calc(2 * (var(--showcase-inset) - var(--player-clearance)) * 480 / 756);
+  padding: var(--player-clearance) var(--showcase-inset);
+  padding-inline-end: calc(var(--showcase-inset) + clamp(0px, 50cqw - 260px, 250px));
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 10rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, calc(10rem + var(--player-width-gain)));
   gap: clamp(.8rem, 4cqw, 2.5rem);
   align-items: center;
   border: 1px solid var(--line);
@@ -148,7 +151,7 @@ h3 { line-height: 1.2; }
 }
 @container (max-width: 420px) {
   #cinematic-showcase { grid-template-columns: minmax(0, 1fr); }
-  #cinematic-showcase .eh-cinema-feature { width: min(100%, 8rem); justify-self: center; }
+  #cinematic-showcase .eh-cinema-feature { width: min(100%, 8rem + var(--player-width-gain)); justify-self: center; }
   .spec { grid-template-columns: 1fr; gap: .65rem; }
   .spec > img { width: 100%; min-height: 0; height: 6rem; }
   .foot { grid-template-columns: 1fr; }
