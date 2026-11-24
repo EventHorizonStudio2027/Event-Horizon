@@ -359,6 +359,26 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   #rail>a>svg,#rail:hover>a>svg,#rail:focus-within>a>svg{margin:0}
   #rail #eh-top-left-animated-logo{width:40px!important;height:40px!important}
 }
+/* Compact game cards share a grid and keep their artwork in view. */
+.more-games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.more-games-grid>.pf,.more-games-grid>.cm{grid-template-columns:minmax(0,1fr);margin:0;border-radius:18px}
+.more-games-grid .pf-info,.more-games-grid>.cm{padding:1rem;gap:.75rem}
+.more-games-grid .cm-info{gap:.75rem}
+.more-games-grid .logo{max-width:190px}
+.more-games-grid .ctrls{grid-template-columns:repeat(2,minmax(0,1fr))}
+.more-games-grid .ctrl{padding:.3rem}
+.more-games-grid .ctrl i{font-size:1rem}
+.more-games-grid .pf-shot{min-height:0;aspect-ratio:3/1}
+.more-games-grid .pf-shot figcaption{left:.5rem;bottom:.5rem;right:.5rem;max-width:calc(100% - 1rem);padding:.25rem .5rem;font-size:.7rem}
+.more-games-grid .cm-art{min-height:0}
+.more-games-grid .cm-art img{max-width:170px}
+.more-games-grid .pill,.more-games-grid .pill2{padding:.45rem .65rem;font-size:.85rem;transform:none}
+.more-games-grid .cm-btns span{padding:.35rem .6rem;font-size:.8rem}
+.more-games-grid>.card{padding:.85rem;border-radius:16px;align-items:center;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:.65rem}
+.more-games-grid>.card .ico{grid-row:span 2;margin:0;width:36px;height:36px}
+.more-games-grid>.card h3{margin:0}
+.more-games-grid>.card p{font-size:.75rem}
+@media(max-width:680px){.more-games-grid{grid-template-columns:minmax(0,1fr)}}
 </style></head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -465,6 +485,7 @@ Your browser does not support embedded video.
 </section>
 <section id="games" style="padding-top:2rem">
 <div class="head rv"><span class="mono">03 · More games</span><h2>Four more, <span class="grad">from the same studio.</span></h2></div>
+<div class="more-games-grid">
 <article class="pf rv">
 <div class="pf-info">
 <span class="tag">Game</span>
@@ -492,9 +513,9 @@ Your browser does not support embedded video.
 </div>
 <div class="cm-art"><img alt="Three frosted cupcakes: pink, yellow and blue" height="167" loading="lazy" src="assets/media_23.webp" width="324"/></div>
 </article>
-<div class="bento two">
-<div class="card rv"><div class="ico">🦎</div><h3>Axolotl Go!</h3><p class="soon">Game · Announcement soon</p></div>
-<div class="card rv d1"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></div>
+
+<article class="card rv"><div class="ico">🦎</div><h3>Axolotl Go!</h3><p class="soon">Game · Announcement soon</p></article>
+<article class="card rv d1"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></article>
 </div>
 </section>
 <section id="apps">
