@@ -250,10 +250,13 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </style>
 <style>
 .eh-cinema{
+  --showcase-original-width:min(36.8rem,40cqw - clamp(.6rem,2vw,1.2rem));
+  --showcase-padding:clamp(.3rem,.8vw,.6rem);
+  --showcase-original-inner-width:calc(var(--showcase-original-width) - 2 * var(--showcase-padding) - 2px);
   position:relative;
   left:50%;
   transform:translateX(-50%);
-  width:min(73.6rem,80cqw - clamp(1.2rem,4vw,2.4rem));
+  width:calc(2 * var(--showcase-original-width));
   margin:1.4rem 0;
   padding:clamp(.3rem,.8vw,.6rem);
   border:1px solid rgba(255,190,105,.2);
@@ -264,7 +267,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .eh-cinema video{
   order:-1;
   display:block;
-  width:min(256px,52%);flex-shrink:0;
+  width:min(256px,var(--showcase-original-inner-width) * .52);flex-shrink:0;
   aspect-ratio:480/756;
   object-fit:contain;
   background:#000;
@@ -274,7 +277,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .eh-cinema p{font-size:.8rem;margin:0;color:#ffc78d}
 @media (max-width:600px){
   .eh-cinema-grid{flex-direction:column;align-items:stretch}
-  .eh-cinema video{order:0;width:min(100%,128px);align-self:center}
+  .eh-cinema video{order:0;width:min(128px,var(--showcase-original-inner-width));align-self:center}
 }
 .fates-trailer{width:min(100%,57.2rem);margin:1.5rem auto 2rem}
 .fates-trailer h3{margin:0 0 .65rem}
