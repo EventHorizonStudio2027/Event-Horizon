@@ -181,7 +181,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @media (max-width:1000px){.cards3{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){.spec{grid-template-columns:92px 1fr;gap:1rem}.spec img{width:92px}.cards3,.cards3.sp{grid-template-columns:1fr}.cine{aspect-ratio:auto;display:flex;flex-direction:column;background:#04050c}.cine img{height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 48%}.cap{position:relative;background:#04050c;padding:1.4rem}.gh img{width:68px;height:68px;border-radius:16px}.tabs{border-radius:22px}.launch::after{background:linear-gradient(to top,rgba(4,5,12,.92),rgba(4,5,12,.35))}.launch>div{margin:0}}
 
-.mapwin{margin:0 0 2.2rem;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0b1118;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.mapwin{margin:2.2rem 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0b1118;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
 .mapwin:fullscreen{border-radius:0;border:0;display:flex;flex-direction:column}
 .mapwin:fullscreen .mw-body{flex:1;aspect-ratio:auto;max-height:none}
 .mw-bar{display:flex;align-items:center;gap:1rem;padding:.65rem 1rem;background:var(--glass2);border-bottom:1px solid var(--line);color:var(--text);backdrop-filter:blur(14px)}
@@ -250,33 +250,47 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </style>
 <style>
 .eh-cinema{
-  --showcase-original-width:min(36.8rem,40cqw - clamp(.6rem,2vw,1.2rem));
-  --showcase-padding:clamp(.3rem,.8vw,.6rem);
-  --showcase-original-inner-width:calc(var(--showcase-original-width) - 2 * var(--showcase-padding) - 2px);
   position:relative;
   left:50%;
   transform:translateX(-50%);
-  width:calc(2.4 * var(--showcase-original-width));
+  width:min(88.32rem,96cqw - clamp(1.44rem,4.8vw,2.88rem));
   margin:1.4rem 0;
-  padding:clamp(.3rem,.8vw,.6rem);
-  border:1px solid rgba(255,190,105,.2);
-  border-radius:14px;
-  background:#101018;
+  padding:clamp(1rem,3vw,2.75rem);
+  border:1px solid rgba(255,190,105,.24);
+  border-radius:18px;
+  background:radial-gradient(ellipse at top left,rgba(143,123,255,.13),transparent 65%),#101018;
 }
-.eh-cinema-grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(.34rem,.8vw,.68rem)}
+.eh-cinema h2{
+  margin:0 0 clamp(1rem,3vw,2rem);
+  font-size:clamp(1.5rem,3vw,2.65rem);
+  color:#f7f1ff;
+}
+.eh-cinema-feature{
+  width:min(100%,22rem);
+  margin:0 auto;
+}
 .eh-cinema video{
   display:block;
-  width:min(256px,var(--showcase-original-inner-width) * .52);flex-shrink:0;
+  width:100%;
+  height:auto;
   aspect-ratio:480/756;
   object-fit:contain;
   background:#000;
-  border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;
 }
-.eh-cinema h2{font-size:clamp(1rem,2vw,1.48rem);margin:0 0 .28rem}
-.eh-cinema p{font-size:.8rem;margin:0;color:#ffc78d}
+.eh-cinema figcaption{
+  margin:.75rem 0 0;
+  text-align:right;
+  font:500 clamp(.8rem,1.6vw,1rem)/1.4 Inter,system-ui,sans-serif;
+  letter-spacing:.035em;
+  color:#ffc78d;
+}
 @media (max-width:600px){
-  .eh-cinema video{width:min(128px,var(--showcase-original-inner-width))}
+  .eh-cinema-feature{width:min(100%,14rem)}
 }
+#channels .live-stream-card{border-color:rgba(255,179,71,.38);background:linear-gradient(145deg,rgba(255,179,71,.09),var(--glass) 62%)}
+#channels .stream-label{display:block;margin:0 0 .65rem;color:#ffc78d}
 .fates-trailer{width:min(100%,57.2rem);margin:1.5rem auto 2rem}
 .fates-trailer h3{margin:0 0 .65rem}
 .fates-trailer video{display:block;width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--line);border-radius:14px}
@@ -423,14 +437,15 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div>
 </section>
 <section aria-labelledby="cinema-title" class="eh-cinema" id="cinematic-showcase">
-<div class="eh-cinema-grid">
-<div><h2 id="cinema-title">Beyond the Horizon</h2>
-<p>Creativity at the Edge</p></div>
+<h2 id="cinema-title">Beyond the Horizon</h2>
+<figure class="eh-cinema-feature">
 <video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
 <source src="assets/creativity-at-the-edge.mp4" type="video/mp4"/>
 Your browser does not support embedded video.
 </video>
-</div></section>
+<figcaption>Creativity at the Edge</figcaption>
+</figure>
+</section>
 <section id="studio">
 <div class="intro rv"><div><span class="mono" style="display:block;margin-bottom:1.1rem">01 · Studio</span><h2>Small team. <span class="grad">Clear standards.</span></h2></div><p>We make games, media and software under one roof, and we hold all of it to the same bar: finish what we start, show the real process, and respect the people who use what we build.</p></div>
 <div class="principles rv">
@@ -453,9 +468,9 @@ Your browser does not support embedded video.
 </div>
 <div class="fates-trailer">
 <h3>Cinematic trailer</h3>
-<video aria-label="Fate’s Passage cinematic trailer" controls playsinline preload="none" poster="assets/media_08.webp">
-<source src="assets/fates-passage-trailer.mp4" type="video/mp4"/>
-<a href="assets/fates-passage-trailer.mp4">Watch the trailer</a>
+<video aria-label="Fate’s Passage cinematic trailer" controls playsinline preload="none" poster="assets/fates-passage-trailer-poster.webp">
+<source src="assets/fates-passage-trailer-finale.mp4" type="video/mp4"/>
+<a href="assets/fates-passage-trailer-finale.mp4">Watch the trailer</a>
 </video>
 </div>
 <dl class="facts5 rv">
@@ -466,17 +481,6 @@ Your browser does not support embedded video.
 <div><dt>Specializations</dt><dd>10</dd></div>
 <div><dt>Triunes (final classes)</dt><dd>120</dd></div>
 </dl>
-<div class="mapwin rv" id="map">
-<div class="mw-bar"><span aria-hidden="true" class="dots"><i></i><i></i><i></i></span><span class="mw-title">Arkaedon · Level 1 map</span><span><button hidden="" id="mw-reload" type="button">Reload</button> <button id="mw-full" type="button">Full screen</button></span></div>
-<div class="mw-body" id="mw-body">
-<div class="mw-poster" id="mw-poster"><div class="bg" id="mw-bg"></div>
-<h3>Explore Arkaedon</h3>
-<p>A live 3D map of the continent, running right here. Drag to look around and scroll to zoom.</p>
-<button class="btn main" id="mw-launch" type="button">Launch the map</button>
-<p class="hint" id="mw-hint" role="status">Best on a larger screen. On a phone, use Full screen.</p>
-</div>
-</div>
-</div>
 <div aria-label="Fate’s Passage details" class="tabs rv" role="tablist">
 <button aria-controls="p1" aria-selected="true" id="t1" role="tab">Specializations</button>
 <button aria-controls="p2" aria-selected="false" id="t2" role="tab" tabindex="-1">The world</button>
@@ -493,6 +497,17 @@ Your browser does not support embedded video.
 <div aria-labelledby="t3" class="panel" hidden="" id="p3" role="tabpanel">
 <p class="lead2">Fate’s Passage is built around choices that visibly change who you are and how the world treats you.</p>
 <div class="cards3"><article class="sys"><h3>Three paths, one destiny</h3><p>Choose three specializations, then two Minors and a Major. Your class name evolves with every choice.</p></article><article class="sys"><h3>Your body tells the story</h3><p>Hair, skin, eyes, markings and sometimes horns, wings or fangs change across 11 appearance stages.</p></article><article class="sys"><h3>A focused skill bar</h3><p>Learn up to 14 skills, but only 8 are active at once, plus a dedicated slot for your Ultimate.</p></article><article class="sys"><h3>The Triune gift</h3><p>A rare talent that fuses three specializations into one of 120 Triunes. The Triuned are admired, envied and feared.</p></article><article class="sys"><h3>Ten astrology signs</h3><p>Pick one at creation and keep it. Each sign grants three passive bonuses.</p></article><article class="sys"><h3>Ten damage types</h3><p>Every enemy attack has a type. Your resistances decide how much of it lands.</p></article><article class="sys"><h3>Twenty mercenaries</h3><p>Recruit companions who each have their own story, personal quest and bonded skill.</p></article><article class="sys"><h3>A home from day one</h3><p>Every Fatewalker starts with a small home in their starter capital.</p></article><article class="sys"><h3>It doesn’t end at 50</h3><p>Raids, Mythic Dungeons, PvP and Triune Arenas, World Bosses, Legendary Crafting, Skill Melding, Guild Wars and seasonal events.</p></article></div>
+</div>
+<div class="mapwin rv" id="map">
+<div class="mw-bar"><span aria-hidden="true" class="dots"><i></i><i></i><i></i></span><span class="mw-title">Arkaedon · Level 1 map</span><span><button hidden="" id="mw-reload" type="button">Reload</button> <button id="mw-full" type="button">Full screen</button></span></div>
+<div class="mw-body" id="mw-body">
+<div class="mw-poster" id="mw-poster"><div class="bg" id="mw-bg"></div>
+<h3>Explore Arkaedon</h3>
+<p>A live 3D map of the continent, running right here. Drag to look around and scroll to zoom.</p>
+<button class="btn main" id="mw-launch" type="button">Launch the map</button>
+<p class="hint" id="mw-hint" role="status">Best on a larger screen. On a phone, use Full screen.</p>
+</div>
+</div>
 </div>
 <div class="launch rv">
 <img alt="Fate’s Passage banner: a runic compass in a golden hexagon beside the game title" height="590" src="assets/media_19.webp" width="1125"/>
@@ -543,9 +558,9 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="channels">
-<div class="head rv"><span class="mono">05 · Media</span><h2>Two channels, <span class="grad">one studio.</span></h2></div>
+<div class="head rv"><span class="mono">05 · Media</span><h2>Live streaming <span class="grad">and reactions.</span></h2></div>
 <div class="g2">
-<div class="card rv"><div class="ico">🎮</div><h3>New Clear Gaming</h3><p>Development videos, gameplay and live streams. See how our games and tools are made, wins and bugs included.</p></div>
+<div class="card rv live-stream-card"><div class="ico" aria-hidden="true">🎮</div><span class="mono stream-label">Live gameplay &amp; development</span><h3>New Clear Gaming</h3><p>Watch us play games and build them live. Join us for gameplay sessions and live looks at how Event Horizon Studios makes its games and tools.</p></div>
 <div class="card rv d1"><div class="ico">🎧</div><h3>New Clear Reactions</h3><p>Music, TV and comedy reactions. A separate home for entertainment, with its own voice.</p></div>
 </div>
 </section>
