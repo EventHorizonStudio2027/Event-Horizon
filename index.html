@@ -51,7 +51,7 @@ p{margin:0 0 1em;color:var(--mut);max-width:56ch}a{color:inherit}
 .cr{display:flex;flex-direction:column;align-items:center;margin-top:.5rem;font:500 .56rem/1.3 "JetBrains Mono",monospace;letter-spacing:.06em;color:var(--mut);opacity:.7;user-select:none}
 
 :root{--rail-width:clamp(56px,9.4vw,92px);--rail-inset:clamp(8px,1.4vw,14px)}
-main{margin-left:calc(env(safe-area-inset-left,0px) + var(--rail-width) + var(--rail-inset) + 8px);overflow-x:clip;isolation:isolate}
+main{position:relative;z-index:1;margin-left:calc(env(safe-area-inset-left,0px) + var(--rail-width) + var(--rail-inset) + 8px);overflow-x:clip;isolation:isolate}
 .page{width:min(1160px,100% - clamp(1.5rem,5vw,3rem));margin-inline:auto}
 section{padding:6rem 0 2rem}
 section:first-child{padding-top:5rem}
@@ -68,7 +68,7 @@ section:first-child{padding-top:5rem}
 #overview .btn{padding:clamp(.6rem,1.7vw,.9rem) clamp(.75rem,2.8vw,1.5rem)}
 #overview .btn:not(.main){background:color-mix(in srgb,var(--bg) 65%,transparent)}
 .hero p.lead{font-size:1.3rem;margin-top:1.5rem;max-width:42rem}
-.bh{position:absolute;aspect-ratio:1;width:clamp(180px,33vw,420px);right:-10%;top:calc(200px + clamp(7rem,31vw,25rem));pointer-events:none;opacity:.48}
+.bh{position:fixed;z-index:0;aspect-ratio:1;width:clamp(180px,33vw,420px);right:-10%;top:min(480px,58svh);pointer-events:none;opacity:.48}
 .bh .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 5%,var(--a),var(--b),var(--c),transparent 85%);-webkit-mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);animation:spin 12s linear infinite;filter:blur(1px)}
 .bh .ring.two{inset:-3%;transform:rotateX(72deg);opacity:.9;animation-duration:9s;animation-direction:reverse}
 .bh .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 40%,transparent),transparent 65%);filter:blur(30px);animation:pulse 5s ease-in-out infinite}
@@ -250,30 +250,28 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </style>
 <style>
 .eh-cinema{
-  width:min(100%,26rem);
-  margin:2rem auto;
-  padding:clamp(.75rem,2vw,1.125rem);
+  width:min(100%,23rem);
+  margin:1.75rem auto;
+  padding:.75rem;
   border:1px solid rgba(255,190,105,.2);
-  border-radius:18px;
-  background:linear-gradient(135deg,#1e131a,#080c19);
+  border-radius:14px;
+  background:#101018;
 }
-.eh-cinema-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) min(108px,40%);
-  gap:clamp(.75rem,2vw,1.25rem);
-  align-items:center;
-}
+.eh-cinema-grid{display:flex;align-items:center;gap:.85rem}
 .eh-cinema video{
+  order:-1;
   display:block;
-  width:100%;
+  width:min(88px,38%);
   aspect-ratio:480/756;
   object-fit:contain;
   background:#000;
-  border:1px solid rgba(255,190,105,.24);
-  border-radius:10px;
+  border-radius:8px;
 }
-.eh-cinema h2{font-size:clamp(1.05rem,2.3vw,1.55rem);margin:0 0 .45rem}
-.eh-cinema p{font-size:.85rem;margin:0;color:#ffc78d}
+.eh-cinema h2{font-size:1rem;margin:0 0 .35rem}
+.eh-cinema p{font-size:.8rem;margin:0;color:#ffc78d}
+.fates-trailer{width:min(100%,44rem);margin:1.5rem auto 2rem}
+.fates-trailer h3{margin:0 0 .65rem}
+.fates-trailer video{display:block;width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--line);border-radius:14px}
 </style><style id="eh-nebula-background-addition">
 /* Event Horizon artwork: sharper, larger and more visible; all existing site styles untouched. */
 .aurora::before{
@@ -360,18 +358,18 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   #rail #eh-top-left-animated-logo{width:40px!important;height:40px!important}
 }
 /* Compact game cards share a grid and keep their artwork in view. */
-.more-games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.more-games-grid{max-width:850px;margin-inline:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .more-games-grid>.pf,.more-games-grid>.cm{grid-template-columns:minmax(0,1fr);margin:0;border-radius:18px}
 .more-games-grid .pf-info,.more-games-grid>.cm{padding:1rem;gap:.75rem}
 .more-games-grid .cm-info{gap:.75rem}
-.more-games-grid .logo{max-width:190px}
+.more-games-grid .logo{width:min(100%,112px);margin-inline:0}
 .more-games-grid .ctrls{grid-template-columns:repeat(2,minmax(0,1fr))}
 .more-games-grid .ctrl{padding:.3rem}
 .more-games-grid .ctrl i{font-size:1rem}
-.more-games-grid .pf-shot{min-height:0;aspect-ratio:3/1}
+.more-games-grid .pf-shot{width:min(100% - 2rem,220px);min-height:0;aspect-ratio:16/10;margin:0 1rem 1rem;border-radius:9px;overflow:hidden}
 .more-games-grid .pf-shot figcaption{left:.5rem;bottom:.5rem;right:.5rem;max-width:calc(100% - 1rem);padding:.25rem .5rem;font-size:.7rem}
-.more-games-grid .cm-art{min-height:0}
-.more-games-grid .cm-art img{max-width:170px}
+.more-games-grid .cm-art{width:min(100%,112px);min-height:0;justify-self:start}
+.more-games-grid .cm-art img{max-width:100%}
 .more-games-grid .pill,.more-games-grid .pill2{padding:.45rem .65rem;font-size:.85rem;transform:none}
 .more-games-grid .cm-btns span{padding:.35rem .6rem;font-size:.8rem}
 .more-games-grid>.card{padding:.85rem;border-radius:16px;align-items:center;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:.65rem}
@@ -382,7 +380,8 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </style></head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
-<div aria-hidden="true" class="aurora"><i></i><i></i><i></i><div aria-hidden="true" class="bh"><div class="glow"></div><div class="ring two"></div><div class="ring"></div><div class="core"></div></div></div>
+<div aria-hidden="true" class="aurora"><i></i><i></i><i></i></div>
+<div aria-hidden="true" class="bh"><div class="glow"></div><div class="ring two"></div><div class="ring"></div><div class="core"></div></div>
 <nav aria-label="Site navigation" class="rail" id="rail"><video aria-label="Event Horizon animated logo, looping" autoplay="" id="eh-top-left-animated-logo" loop="" muted="" playsinline="" preload="metadata"><source src="assets/logo-ping-pong.mp4" type="video/mp4"/></video>
 <a aria-label="Event Horizon Studios home" class="mark" href="#overview"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-20 12 12)"></ellipse></svg><span><b>Event Horizon</b></span></a>
 <a aria-label="Overview" href="#overview"><svg viewbox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"></path></svg><span>Overview</span></a>
@@ -441,6 +440,13 @@ Your browser does not support embedded video.
 <div><span class="tag">In development</span><p>A medium-hard fantasy MMORPG on the continent of Arkaedon. You are a Fatewalker, and every specialization you choose changes your abilities and your appearance.</p></div>
 <a class="btn main" href="mailto:EventHorizon@EventHorizonStudios.com?subject=Fate%E2%80%99s%20Passage%20launch%20news">Get launch news</a>
 </div>
+</div>
+<div class="fates-trailer">
+<h3>Cinematic trailer</h3>
+<video aria-label="Fate’s Passage cinematic trailer" controls playsinline preload="none" poster="assets/media_08.webp">
+<source src="assets/fates-passage-trailer.mp4" type="video/mp4"/>
+<a href="assets/fates-passage-trailer.mp4">Watch the trailer</a>
+</video>
 </div>
 <dl class="facts5 rv">
 <div><dt>Genre</dt><dd>Fantasy MMORPG</dd></div>
