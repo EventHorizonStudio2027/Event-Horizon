@@ -343,37 +343,51 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: linear-gradient(110deg, #191824, #10121b 56%, #171221);
+  background: #131419;
+  border-color: #353139;
 }
 #cinematic-showcase::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0;
+  inset: 0 0 0 46%;
   pointer-events: none;
+  border-inline-start: 1px solid #ffffff0d;
   background:
-    linear-gradient(90deg, #151521 5%, #151521d9 26%, #15152135 59%, #15152120 80%, #151521bb),
-    url("assets/media_01.webp") 88% 54% / min(70%, 44rem) auto no-repeat;
-  opacity: .7;
+    repeating-linear-gradient(90deg, #ffffff08 0 1px, transparent 1px 56px),
+    linear-gradient(100deg, #1b1a20, #151419);
 }
 #cinematic-showcase .eh-cinema-copy {
-  padding-inline-start: clamp(0px, 9cqw - 36px, 4.25rem);
+  padding-inline-start: clamp(0px, 10cqw - 36px, 5.75rem);
 }
-#cinematic-showcase .eh-cinema-copy::before {
+#cinematic-showcase h2 { text-align: left; }
+#cinematic-showcase .eh-cinema-copy p::after {
   content: "";
   display: block;
-  width: 2.25rem;
-  height: 2px;
-  margin-bottom: .65rem;
-  background: linear-gradient(90deg, var(--a), #c1a7ff);
+  width: 3rem;
+  height: 1px;
+  margin-top: .85rem;
+  background: var(--a);
 }
-#cinematic-showcase video {
-  border-color: #cba89080;
-  box-shadow: 0 0 26px #c58fff38, 0 5px 16px #0008;
+#cinematic-showcase .eh-cinema-feature {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #101015, 0 0 0 3px #a47a4f80, 8px 12px 26px #0008;
 }
+#cinematic-showcase .eh-cinema-feature::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 1px solid #efba83;
+  border-radius: 13px;
+  clip-path: polygon(0 0, 19% 0, 19% 5%, 5% 5%, 5% 13%, 0 13%, 0 0,
+    100% 100%, 81% 100%, 81% 95%, 95% 95%, 95% 87%, 100% 87%, 100% 100%);
+  pointer-events: none;
+}
+#cinematic-showcase video { border-color: #765a43; }
 @container (max-width: 420px) {
-  #cinematic-showcase .eh-cinema-copy { padding-inline-start: 0; }
-  #cinematic-showcase::before { background-position: center, center; background-size: auto, cover; opacity: .5; }
+  #cinematic-showcase::before { inset: 35% 0 0; border-inline-start: 0; }
+  #cinematic-showcase .eh-cinema-copy { padding: .5rem 0 0; }
 }
 .portfolio-card h3 { margin: .8rem 0 .4rem; }
 .more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
