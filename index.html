@@ -365,11 +365,11 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 @container (max-width: 420px) {
   #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
-#ai-wallet .domain-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
-#ai-wallet .domain-card-heading img { display: block; flex: none; }
-#ai-wallet h3 { margin: 0 0 .25rem; }
-#ai-wallet .domain-card-action { margin-top: auto; padding-top: .85rem; }
-#ai-wallet .btn { padding: .5rem .8rem; }
+:is(#ai-wallet, #cloutflow) .app-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
+:is(#ai-wallet, #cloutflow) .app-card-heading img { display: block; flex: none; }
+:is(#ai-wallet, #cloutflow) h3 { margin: 0 0 .25rem; }
+:is(#ai-wallet, #cloutflow) .app-card-action { margin-top: auto; padding-top: .85rem; }
+:is(#ai-wallet, #cloutflow) .btn { padding: .5rem .8rem; }
 .portfolio-card h3 { margin: .8rem 0 .4rem; }
 .more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
 </style>
@@ -599,17 +599,20 @@ Your browser does not support embedded video.
 <div class="head rv"><span class="mono">Software</span><h2>Apps and platforms <span class="grad">in development.</span></h2></div>
 <div class="g3">
 <article class="card rv portfolio-card" id="ai-wallet">
-<div class="domain-card-heading">
+<div class="app-card-heading">
 <img src="assets/ai-wallet-icon.svg" alt="" width="48" height="48" loading="lazy"/>
 <div><h3>domAIn</h3><span class="tag">In development</span></div>
 </div>
 <p>Manage AI accounts, subscriptions, renewals, and generated files in one place.</p>
-<div class="domain-card-action"><a class="btn main" href="https://fatespassage.github.io/AI-Wallet/">Open domAIn <span aria-hidden="true">↗</span></a></div>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/AI-Wallet/">Open domAIn <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="card rv portfolio-card" id="cloutflow">
-<span class="tag">In development</span>
-<h3>CloutFlow</h3>
+<div class="app-card-heading">
+<img src="assets/cloutflow.svg" alt="" width="48" height="48" loading="lazy"/>
+<div><h3>CloutFlow</h3><span class="tag">In development</span></div>
+</div>
 <p>Track creator earnings, platform fees, and payouts across streaming, memberships, and storefronts.</p>
+<div class="app-card-action"><a class="btn main" href="https://fatespassage.github.io/CloutFlow/">Open CloutFlow <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="card rv portfolio-card" id="social-eyes">
 <span class="tag">In development</span>
