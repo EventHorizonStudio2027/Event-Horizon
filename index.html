@@ -340,54 +340,30 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <link rel="stylesheet" href="assets/studio.css?v=studio-typography"/>
 <style>
 #cinematic-showcase {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #131419;
+  background: radial-gradient(ellipse at 73% 54%, #29211f, #17181f 49%, #131419 83%);
   border-color: #353139;
 }
-#cinematic-showcase::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0 0 0 46%;
-  pointer-events: none;
-  border-inline-start: 1px solid #ffffff0d;
-  background:
-    repeating-linear-gradient(90deg, #ffffff08 0 1px, transparent 1px 56px),
-    linear-gradient(100deg, #1b1a20, #151419);
-}
 #cinematic-showcase .eh-cinema-copy {
-  padding-inline-start: clamp(0px, 10cqw - 36px, 5.75rem);
+  justify-self: end;
+  width: min(100%, 22rem);
 }
 #cinematic-showcase h2 { text-align: left; }
 #cinematic-showcase .eh-cinema-copy p::after {
   content: "";
   display: block;
-  width: 3rem;
+  width: 2.75rem;
   height: 1px;
-  margin-top: .85rem;
+  margin-top: .65rem;
   background: var(--a);
 }
-#cinematic-showcase .eh-cinema-feature {
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 0 0 2px #101015, 0 0 0 3px #a47a4f80, 8px 12px 26px #0008;
+#cinematic-showcase video {
+  border-color: #665245;
+  box-shadow: 0 0 0 2px #0f1014, 0 10px 24px #0007;
 }
-#cinematic-showcase .eh-cinema-feature::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border: 1px solid #efba83;
-  border-radius: 13px;
-  clip-path: polygon(0 0, 19% 0, 19% 5%, 5% 5%, 5% 13%, 0 13%, 0 0,
-    100% 100%, 81% 100%, 81% 95%, 95% 95%, 95% 87%, 100% 87%, 100% 100%);
-  pointer-events: none;
-}
-#cinematic-showcase video { border-color: #765a43; }
+#showcase-sound { margin-top: .85rem; padding: .5rem .85rem; }
+#showcase-sound[hidden] { display: none; }
 @container (max-width: 420px) {
-  #cinematic-showcase::before { inset: 35% 0 0; border-inline-start: 0; }
-  #cinematic-showcase .eh-cinema-copy { padding: .5rem 0 0; }
+  #cinematic-showcase .eh-cinema-copy { justify-self: start; }
 }
 #ai-wallet .domain-card-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-bottom: .7rem; }
 #ai-wallet .domain-card-heading img { display: block; flex: none; }
@@ -485,6 +461,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <div class="eh-cinema-copy">
 <h2 id="cinema-title">Beyond the Horizon</h2>
 <p>Creativity at the Edge</p>
+<button class="btn" id="showcase-sound" type="button" aria-controls="studio-showcase-video" hidden>Play with sound</button>
 </div>
 <div class="eh-cinema-feature">
 <video id="studio-showcase-video" aria-label="Event Horizon Studios — Creativity at the Edge" controls playsinline preload="metadata">
@@ -798,11 +775,34 @@ Your browser does not support embedded video.
 <script>
 (function(){
   var video=document.getElementById('studio-showcase-video');
+  var sound=document.getElementById('showcase-sound');
+  var requestedSound=false;
+  function syncSoundButton(){
+    sound.hidden=!video.paused&&!video.ended&&!video.muted;
+  }
+  sound.addEventListener('click',function(){
+    requestedSound=true;
+    if(video.ended)video.currentTime=0;
+    video.muted=false;
+    video.play().catch(syncSoundButton);
+  });
+  ['playing','pause','ended','volumechange'].forEach(function(event){
+    video.addEventListener(event,syncSoundButton);
+  });
+  syncSoundButton();
   if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var observer=new IntersectionObserver(function(entries){
     if(!entries.some(function(entry){return entry.isIntersecting&&entry.intersectionRatio===1}))return;
     observer.disconnect();
-    if(video.paused&&!video.ended&&video.currentTime===0)video.play().catch(function(){});
+    if(requestedSound||!video.paused||video.ended||video.currentTime!==0)return;
+    video.play().catch(function(error){
+      if(error.name!=='NotAllowedError'||requestedSound||!video.paused)return;
+      video.muted=true;
+      video.play().catch(function(){
+        if(!requestedSound)video.muted=false;
+        syncSoundButton();
+      });
+    });
   },{threshold:1});
   observer.observe(video);
 })();
