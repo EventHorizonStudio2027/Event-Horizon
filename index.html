@@ -337,7 +337,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .spec-name{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .spec .spec-emblem{width:clamp(32px,5vw,48px);height:auto;min-height:0;object-fit:contain;border:0;border-radius:0;flex:none}
 </style>
-<link rel="stylesheet" href="assets/studio.css"/>
+<link rel="stylesheet" href="assets/studio.css?v=showcase-full-view"/>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -696,10 +696,10 @@ Your browser does not support embedded video.
   var video=document.getElementById('studio-showcase-video');
   if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var observer=new IntersectionObserver(function(entries){
-    if(!entries.some(function(entry){return entry.isIntersecting&&entry.intersectionRatio>=.5}))return;
+    if(!entries.some(function(entry){return entry.isIntersecting&&entry.intersectionRatio===1}))return;
     observer.disconnect();
     if(video.paused&&!video.ended&&video.currentTime===0)video.play().catch(function(){});
-  },{threshold:.5});
+  },{threshold:1});
   observer.observe(video);
 })();
 </script>

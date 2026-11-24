@@ -55,6 +55,7 @@ h3 { line-height: 1.2; }
   width: 100%;
   margin: clamp(.9rem, 2.75cqw, 1.5rem) 0 0;
   padding: clamp(.8rem, 3cqw, 1.65rem);
+  padding-inline-end: calc(clamp(.8rem, 3cqw, 1.65rem) + clamp(0px, 50cqw - 260px, 250px));
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 10rem);
   gap: clamp(.8rem, 4cqw, 2.5rem);
