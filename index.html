@@ -338,6 +338,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 .spec .spec-emblem{width:clamp(32px,5vw,48px);height:auto;min-height:0;object-fit:contain;border:0;border-radius:0;flex:none}
 </style>
 <link rel="stylesheet" href="assets/studio.css?v=studio-typography"/>
+<style>
+.portfolio-card h3 { margin: .8rem 0 .4rem; }
+.more-games-grid > .portfolio-card { display: flex; align-items: flex-start; padding: clamp(.85rem, 2.4cqw, 1.4rem); }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -366,15 +370,20 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <a href="#cupcake">Mystery Cupcake Maker</a>
 <a href="#axolotl">Axolotl Go!</a>
 <a href="#monster-truck">Monster Truck Go!</a>
+<a href="#recreated">Recreated</a>
+<a href="#eat-your-veggies">Eat Your Veggies</a>
 </div>
 </details>
 <details name="site-navigation">
 <summary aria-label="Apps" data-section="apps"><svg viewbox="0 0 24 24"><rect height="20" rx="3" width="10" x="7" y="2"></rect><path d="M11 18h2"></path></svg><span class="rail-label">Apps</span></summary>
 <div class="rail-items">
 <a href="#apps">All apps</a>
-<a href="#ai-wallet">AI Wallet+</a>
+<a href="#ai-wallet">domAIn</a>
 <a href="#cloutflow">CloutFlow</a>
 <a href="#social-eyes">Social Eyes</a>
+<a href="#preview">preVIEW</a>
+<a href="#crowdcode">CrowdCode</a>
+<a href="#crowdcraft">CrowdCraft</a>
 </div>
 </details>
 <details name="site-navigation">
@@ -412,7 +421,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div>
 <div class="stats rv">
 <div class="stat"><b data-n="1">1</b><span>Flagship MMORPG</span></div>
-<div class="stat"><b data-n="6">6</b><span>Total games</span></div>
+<div class="stat"><b data-n="7">7</b><span>Games featured</span></div>
 <div class="stat"><b data-n="7" data-s="+">7+</b><span>Apps in development</span></div>
 <div class="stat"><b data-n="2">2</b><span>Media channels</span></div>
 </div>
@@ -501,7 +510,7 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="games" style="padding-top:2rem">
-<div class="head rv"><span class="mono">More games</span><h2>Four more, <span class="grad">from the same studio.</span></h2></div>
+<div class="head rv"><span class="mono">More games</span><h2>More games <span class="grad">from the studio.</span></h2></div>
 <div class="more-games-grid">
 <article class="pf rv" id="petal">
 <div class="pf-info">
@@ -533,14 +542,51 @@ Your browser does not support embedded video.
 
 <article class="card rv" id="axolotl"><div class="ico">🦎</div><h3>Axolotl Go!</h3><p class="soon">Game · Announcement soon</p></article>
 <article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></article>
+<article class="card rv portfolio-card" id="recreated">
+<span class="tag">In development</span>
+<h3>Recreated</h3>
+<p>An action RPG set in an evolving world. The browser prototype comes first, with a Unity 2.5D version planned.</p>
+</article>
+<article class="card rv portfolio-card" id="eat-your-veggies">
+<span class="tag">In development</span>
+<h3>Eat Your Veggies</h3>
+<p>A co-op adventure for kids and grownups where families pick vegetables and real-world taste tests move the story forward.</p>
+</article>
 </div>
 </section>
 <section id="apps">
-<div class="head rv"><span class="mono">Software</span><h2>Three apps, <span class="grad">in development.</span></h2></div>
+<div class="head rv"><span class="mono">Software</span><h2>Apps and platforms <span class="grad">in development.</span></h2></div>
 <div class="g3">
-<div class="card rv" id="ai-wallet"><div class="ico">👛</div><span class="tag" style="margin-top:1.4rem">In development</span><h3 style="margin-top:.8rem">AI Wallet+</h3><p class="soon">App · Announcement soon</p></div>
-<div class="card rv d1" id="cloutflow"><div class="ico">🌊</div><span class="tag" style="margin-top:1.4rem">In development</span><h3 style="margin-top:.8rem">CloutFlow</h3><p class="soon">App · Announcement soon</p></div>
-<div class="card rv d2" id="social-eyes"><div class="ico">👁️</div><span class="tag" style="margin-top:1.4rem">In development</span><h3 style="margin-top:.8rem">Social Eyes</h3><p class="soon">App · Announcement soon</p></div>
+<article class="card rv portfolio-card" id="ai-wallet">
+<span class="tag">In development</span>
+<h3>domAIn</h3>
+<p>Manage AI accounts, subscriptions, renewals, and generated files in one place.</p>
+</article>
+<article class="card rv portfolio-card" id="cloutflow">
+<span class="tag">In development</span>
+<h3>CloutFlow</h3>
+<p>Track creator earnings, platform fees, and payouts across streaming, memberships, and storefronts.</p>
+</article>
+<article class="card rv portfolio-card" id="social-eyes">
+<span class="tag">In development</span>
+<h3>Social Eyes</h3>
+<p>Discover people and venues with opt-in presence, mutual matches, and chat.</p>
+</article>
+<article class="card rv portfolio-card" id="preview">
+<span class="tag">In development</span>
+<h3>preVIEW</h3>
+<p>Share interactive previews of games and apps that people can try in their browser.</p>
+</article>
+<article class="card rv portfolio-card" id="crowdcode">
+<span class="tag">In development</span>
+<h3>CrowdCode</h3>
+<p>A collaboration platform for building apps and tracking changes as projects evolve.</p>
+</article>
+<article class="card rv portfolio-card" id="crowdcraft">
+<span class="tag">In development</span>
+<h3>CrowdCraft</h3>
+<p>A collaboration platform for building games and media projects.</p>
+</article>
 </div>
 </section>
 <section id="channels">
