@@ -94,7 +94,7 @@ section:first-child{padding-top:5rem}
 #overview .btn{padding:clamp(.6rem,1.7vw,.9rem) clamp(.75rem,2.8vw,1.5rem)}
 #overview .btn:not(.main){background:color-mix(in srgb,var(--bg) 65%,transparent)}
 .hero p.lead{font-size:1.3rem;margin-top:1.5rem;max-width:42rem}
-.bh{position:fixed;z-index:0;aspect-ratio:1;width:clamp(180px,33vw,420px);right:-10%;top:calc(min(480px,58svh) + 350px);pointer-events:none;opacity:.48}
+.bh{--hole-size:clamp(180px,33vw,420px);position:fixed;z-index:0;aspect-ratio:1;width:var(--hole-size);right:calc(-10% + min(200px,32vw));top:max(0px,min(calc(min(480px,58svh) + 350px),100svh - var(--hole-size) - 12px));pointer-events:none;opacity:.48}
 .bh .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 5%,var(--a),var(--b),var(--c),transparent 85%);-webkit-mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);mask:radial-gradient(circle,transparent 50%,#000 52%,#000 64%,transparent 72%);animation:spin 12s linear infinite;filter:blur(1px)}
 .bh .ring.two{inset:-3%;transform:rotateX(72deg);opacity:.9;animation-duration:9s;animation-direction:reverse}
 .bh .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 40%,transparent),transparent 65%);filter:blur(30px);animation:pulse 5s ease-in-out infinite}
