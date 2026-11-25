@@ -447,6 +447,13 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
   }
 }
 </style>
+<style>
+@media (max-width: 760px) {
+  #map, #map .mw-body { width: 100%; min-width: 0; max-width: 100%; }
+  #map .mw-body iframe { width: 1px; min-width: 100%; max-width: 100%; }
+  #map .mw-poster .bg { background-size: contain; background-repeat: no-repeat; }
+}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -875,7 +882,9 @@ Your browser does not support embedded video.
       var bin=new Uint8Array(await response.arrayBuffer());
       var html=await new Response(new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
       if(frame)frame.remove();
-      frame=document.createElement('iframe');frame.title='Interactive 3D map of Arkaedon';frame.setAttribute('allow','fullscreen');frame.srcdoc=html;
+      frame=document.createElement('iframe');frame.title='Interactive 3D map of Arkaedon';frame.setAttribute('allow','fullscreen');
+      var embeddedMapStyles='<style>@media(max-width:480px){html,body,#view{width:100%;max-width:100%;overflow:hidden}#title{max-width:calc(100% - 82px)}#title b{font-size:clamp(12px,5vw,20px);letter-spacing:.08em}#tools{right:8px;grid-template-columns:repeat(2,44px);gap:4px}#tools button{padding:0}#stick{width:86px;height:86px;left:8px}#menu{width:min(230px,calc(100% - 20px));max-width:calc(100% - 20px);box-sizing:border-box}}</style>';
+      frame.srcdoc=html.replace('</head>',embeddedMapStyles+'</head>');
       await new Promise(function(resolve){
         frame.addEventListener('load',resolve,{once:true});
         body.appendChild(frame);
