@@ -567,6 +567,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 #games #cupcake .cm-art img { width: 100%; height: auto; }
 #games .game-play, #games :is(#petal, #cupcake) > .game-play { width: 100%; justify-content: center; align-self: stretch; margin: 0; }
 </style>
+<style>
+#games .truck-game-gallery { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.35fr); gap: .35rem; width: 100%; align-items: start; }
+#games #monster-truck .truck-game-gallery img { width: 100%; height: auto; max-height: none; }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -820,7 +824,7 @@ Your browser does not support embedded video.
 </details>
 </div>
 <figure class="pf-shot gameplay-preview game-gallery-frame"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
-<button class="btn game-play" type="button" disabled aria-label="Petal 2 the Meadow: Play unavailable">Play unavailable</button>
+<a class="btn main game-play" href="./play/petal-2-the-meadow/" aria-label="Play Petal 2 the Meadow">Play <span aria-hidden="true">↗</span></a>
 </article>
 <article class="cm rv" id="cupcake">
 <div class="cm-info">
@@ -848,7 +852,17 @@ Your browser does not support embedded video.
 </div>
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Axolotl-Go/" aria-label="Play Axolotl Go!">Play <span aria-hidden="true">↗</span></a>
 </article>
-<article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p><button class="btn game-play" type="button" disabled aria-label="Monster Truck Go!: Play unavailable">Play unavailable</button></article>
+<article class="card rv portfolio-card" id="monster-truck">
+<h3 class="sr">Monster Truck Go!</h3>
+<img class="game-brand game-wordmark" src="assets/monster-truck-logo.webp" alt="" loading="lazy"/>
+<p>Customize your truck, then hit the arena for jumps and turbo boosts.</p>
+<div class="truck-game-gallery">
+<figure class="game-gallery-frame"><a href="assets/monster-truck-title.webp"><img src="assets/monster-truck-title.webp" alt="Green monster truck on the Monster Truck Go! title screen" width="633" height="1050" loading="lazy"/></a><figcaption>Title screen</figcaption></figure>
+<figure class="game-gallery-frame"><a href="assets/monster-truck-garage.webp"><img src="assets/monster-truck-garage.webp" alt="Red monster truck with paint and emblem customization" width="633" height="1050" loading="lazy"/></a><figcaption>Truck Garage</figcaption></figure>
+<figure class="game-gallery-frame"><a href="assets/monster-truck-gameplay.webp"><img src="assets/monster-truck-gameplay.webp" alt="Monster truck at the jump lane with turbo and driving controls" width="800" height="916" loading="lazy"/></a><figcaption>Gameplay</figcaption></figure>
+</div>
+<a class="btn main game-play" href="./play/monster-truck-go/" aria-label="Play Monster Truck Go!">Play <span aria-hidden="true">↗</span></a>
+</article>
 <article class="card rv portfolio-card" id="eat-your-veggies">
 <img class="game-brand game-icon" src="assets/eat-your-veggies-icon.png" alt="" width="180" height="180" loading="lazy"/>
 <h3>Eat Your Veggies</h3>
