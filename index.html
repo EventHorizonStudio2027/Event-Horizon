@@ -392,7 +392,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 <style>#recreated .app-card-heading img { width: 64px; height: 64px; }</style>
 <style>
 #games .gameplay-preview { box-sizing: border-box; width: 75%; max-width: 552px; margin-inline: auto; }
-#games .more-games-grid { grid-auto-rows: 1fr; }
+#games .more-games-grid { grid-auto-rows: auto; align-items: start; }
 #games .more-games-grid > article { grid-column: auto; min-width: 0; margin: 0; border-radius: 18px; }
 #games .more-games-grid > .pf { grid-template-columns: minmax(0, 1fr); align-content: start; }
 #games .more-games-grid > .card { display: flex; align-items: flex-start; justify-content: flex-start; padding: 1rem; }
@@ -532,10 +532,22 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 #games .game-gallery-frame figcaption { position: static; width: auto; max-width: none; padding: .28rem .5rem; border-radius: 0; color: var(--mut); background: var(--surface); font-size: .65rem; line-height: 1.3; }
 #games .game-gallery-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; width: 100%; }
 #games .game-gallery-pair img { height: 125px; }
-#games .game-play { align-self: flex-start; justify-self: start; margin-top: auto; padding: .45rem .75rem; }
+#games .game-play { align-self: flex-start; justify-self: start; margin-top: .2rem; padding: .45rem .75rem; }
 #games :is(#petal, #cupcake) > .game-play { margin-inline: 1rem; }
 #games #petal > .game-play { margin-bottom: .85rem; }
 #games .game-play:disabled { opacity: .65; cursor: default; transform: none; }
+</style>
+<style>
+#games .more-games-grid > article { align-self: start; }
+#games :is(#petal, #cupcake) { align-content: start; }
+#games #cupcake { gap: .55rem; }
+#games #cupcake .cupcake-details { font-size: .78rem; }
+#games #cupcake .cupcake-details summary { cursor: pointer; font-weight: 600; }
+#games #cupcake .cupcake-details > div { margin-top: .55rem; }
+#games #cupcake .game-gallery-frame { width: min(100%, 155px); margin-block: 0; }
+#games :is(#petal, #recreated, #cupcake) .game-gallery-frame img { max-height: none; }
+#games #petal .game-gallery-frame { width: calc(100% - 2rem); margin-inline: auto; }
+#games #cupcake > .game-play { margin-inline: 0; }
 </style>
 </head>
 <body id="top">
@@ -799,10 +811,12 @@ Your browser does not support embedded video.
 <h3 class="sr">Mystery Cupcake Maker</h3>
 <img alt="Mystery Cupcake Maker logo: a pink cupcake and four mystery jars above bubble lettering" class="logo" height="243" loading="lazy" src="assets/media_22.webp" width="337"/>
 <p class="pill2">Pick a jar. Bake a surprise!</p>
+<details class="cupcake-details"><summary>Game features</summary>
 <div aria-label="Game features" class="badges"><span class="b1">5 Mystery Jars</span><span class="b2">1 Free Pass</span><span class="b3">4.7+ Score = Gold Medal</span></div>
 <div aria-label="In the game" class="cm-btns"><span>🏅 Cupcake Shop</span><span>🏆 Leaderboard</span></div>
-</div>
 <div class="cm-art"><img alt="Three frosted cupcakes: pink, yellow and blue" height="167" loading="lazy" src="assets/media_23.webp" width="324"/></div>
+</details>
+</div>
 <figure class="gameplay-preview game-gallery-frame"><a href="assets/cupcake-maker-gameplay.webp" aria-label="View Gameplay · Mystery Cupcake Maker"><img src="assets/cupcake-maker-gameplay.webp" alt="Mystery Cupcake Maker jars and baking controls" width="896" height="1100" loading="lazy"/></a><figcaption>Gameplay · Mystery Cupcake Maker</figcaption></figure>
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Mystery-Cupcake-Maker/" aria-label="Play Mystery Cupcake Maker">Play <span aria-hidden="true">↗</span></a>
 </article>
