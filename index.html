@@ -856,7 +856,9 @@ Your browser does not support embedded video.
     });
   });
   document.addEventListener('click',function(event){
-    if(rail.hasAttribute('data-expanded')&&!rail.contains(event.target))setRailExpanded(false);
+    if(!rail.hasAttribute('data-expanded'))return;
+    var link=event.target.closest('a[href^="#"]');
+    if(!rail.contains(event.target)||link)setRailExpanded(false);
   });
   rail.addEventListener('keydown',function(event){
     if(event.key==='Escape'&&rail.hasAttribute('data-expanded')){
