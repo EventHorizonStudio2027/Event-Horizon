@@ -409,6 +409,39 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 #recreated .gameplay-preview figcaption { padding: .45rem .65rem; color: var(--mut); font-size: .7rem; }
 #games .cm-art { width: min(75%, 120px); }
 </style>
+<style>
+#overview .stat-label-mobile { display: none; }
+@media (max-width: 600px) {
+  body { --rail-width: 47px; }
+  #rail {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--rail-inset));
+    max-height: none;
+  }
+  #overview .hero > div:first-child { width: 100%; }
+  #overview .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem; }
+  #overview .btn { justify-content: center; text-align: center; padding: .35rem .25rem; font-size: .66rem; }
+  #overview .stat { text-align: center; padding: .5rem .15rem; }
+  #overview .stat-label-wide { display: none; }
+  #overview .stat-label-mobile { display: block; margin-top: .25rem; font-size: clamp(.48rem, 2.65cqw, .62rem); }
+  #cinematic-showcase {
+    margin-top: .85rem;
+    padding: .65rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 41%);
+    gap: .55rem;
+  }
+  #cinematic-showcase h2 { font-size: clamp(1rem, 6.6cqw, 1.45rem); line-height: 1.1; }
+  #cinematic-showcase .eh-cinema-copy p { font-size: .72rem; line-height: 1.35; }
+  #cinematic-showcase .eh-cinema-copy p::after { margin-top: .45rem; }
+  #cinematic-showcase .eh-cinema-feature { width: 100%; }
+  #showcase-sound { margin-top: .55rem; padding: .32rem .45rem; color: var(--a); font-size: .66rem; text-align: left; }
+}
+@media (max-width: 600px) {
+  @container (max-width: 225px) {
+    #cinematic-showcase { grid-template-columns: minmax(0, 1fr); }
+    #cinematic-showcase .eh-cinema-feature { width: min(100%, 7.5rem); justify-self: center; }
+  }
+}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -488,10 +521,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 </div>
 </div>
 <div class="stats rv">
-<div class="stat"><b data-n="1">1</b><span>Flagship MMORPG</span></div>
-<div class="stat"><b data-n="7">7</b><span>Games featured</span></div>
-<div class="stat"><b data-n="7" data-s="+">7+</b><span>Apps in development</span></div>
-<div class="stat"><b data-n="2">2</b><span>Media channels</span></div>
+<div class="stat"><b data-n="1">1</b><span class="stat-label-wide">Flagship MMORPG</span><span class="stat-label-mobile">Flagship MMO</span></div>
+<div class="stat"><b data-n="7">7</b><span class="stat-label-wide">Games featured</span><span class="stat-label-mobile">Games</span></div>
+<div class="stat"><b data-n="7" data-s="+">7+</b><span class="stat-label-wide">Apps in development</span><span class="stat-label-mobile">Apps underway</span></div>
+<div class="stat"><b data-n="2">2</b><span class="stat-label-wide">Media channels</span><span class="stat-label-mobile">Channels</span></div>
 </div>
 </section>
 <section aria-labelledby="cinema-title" class="eh-cinema" id="cinematic-showcase">
