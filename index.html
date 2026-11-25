@@ -525,6 +525,18 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
   #games #petal .pf-shot figcaption { padding-block: .24rem; }
 }
 </style>
+<style>
+#games .game-gallery-frame { width: 100%; max-width: 420px; margin: .45rem auto; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--surface); }
+#games .game-gallery-frame a { display: block; }
+#games .game-gallery-frame img { display: block; width: 100%; height: auto; max-height: 155px; object-fit: contain; }
+#games .game-gallery-frame figcaption { position: static; width: auto; max-width: none; padding: .28rem .5rem; border-radius: 0; color: var(--mut); background: var(--surface); font-size: .65rem; line-height: 1.3; }
+#games .game-gallery-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; width: 100%; }
+#games .game-gallery-pair img { height: 125px; }
+#games .game-play { align-self: flex-start; justify-self: start; margin-top: auto; padding: .45rem .75rem; }
+#games :is(#petal, #cupcake) > .game-play { margin-inline: 1rem; }
+#games #petal > .game-play { margin-bottom: .85rem; }
+#games .game-play:disabled { opacity: .65; cursor: default; transform: none; }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -756,11 +768,11 @@ Your browser does not support embedded video.
 <div><h3>Recreated</h3><span class="tag">In development</span></div>
 </div>
 <p>An action RPG set in an evolving world.</p>
-<div class="app-card-action"><a class="btn main" href="https://eventhorizonstudio2027.github.io/recreated/">Play Recreated <span aria-hidden="true">↗</span></a></div>
-<figure class="gameplay-preview">
+<figure class="gameplay-preview game-gallery-frame">
 <a href="assets/recreated-gameplay.webp" aria-label="View the Recreated gameplay screenshot"><img src="assets/recreated-gameplay.webp" alt="The player faces enemies on a bridge in the Mire" loading="lazy"/></a>
 <figcaption>Gameplay · The Mire</figcaption>
 </figure>
+<a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/recreated/" aria-label="Play Recreated">Play <span aria-hidden="true">↗</span></a>
 </article>
 <article class="pf rv" id="petal">
 <div class="pf-info">
@@ -778,7 +790,8 @@ Your browser does not support embedded video.
 <div aria-label="Features" class="chips2"><span>🌸 Flower counter</span><span>🪙 Coins</span><span>🧺 Bag</span><span>🏪 Petal Shop</span></div>
 </details>
 </div>
-<figure class="pf-shot gameplay-preview"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
+<figure class="pf-shot gameplay-preview game-gallery-frame"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
+<button class="btn game-play" type="button" disabled aria-label="Petal 2 the Meadow: Play unavailable">Play unavailable</button>
 </article>
 <article class="cm rv" id="cupcake">
 <div class="cm-info">
@@ -790,24 +803,25 @@ Your browser does not support embedded video.
 <div aria-label="In the game" class="cm-btns"><span>🏅 Cupcake Shop</span><span>🏆 Leaderboard</span></div>
 </div>
 <div class="cm-art"><img alt="Three frosted cupcakes: pink, yellow and blue" height="167" loading="lazy" src="assets/media_23.webp" width="324"/></div>
+<figure class="gameplay-preview game-gallery-frame"><a href="assets/cupcake-maker-gameplay.webp" aria-label="View Gameplay · Mystery Cupcake Maker"><img src="assets/cupcake-maker-gameplay.webp" alt="Mystery Cupcake Maker jars and baking controls" width="896" height="1100" loading="lazy"/></a><figcaption>Gameplay · Mystery Cupcake Maker</figcaption></figure>
+<a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Mystery-Cupcake-Maker/" aria-label="Play Mystery Cupcake Maker">Play <span aria-hidden="true">↗</span></a>
 </article>
 
 <article class="card rv portfolio-card" id="axolotl">
 <h3>Axolotl Go!</h3>
 <p>Swim through an underwater world, collect gems, and dodge hazards before time runs out.</p>
-<div class="axolotl-previews">
-<a href="https://eventhorizonstudio2027.github.io/Axolotl-Go/" aria-label="Play Axolotl Go!">
-<img src="assets/axolotl-go-title.webp" alt="Axolotl Go! title screen with a pink axolotl and a Play button" width="888" height="986" loading="lazy"/>
-</a>
-<img src="assets/axolotl-go-gameplay.webp" alt="A blue axolotl swimming above the seafloor with the Swim and Look controls visible" width="1200" height="681" loading="lazy" style="display:block;width:100%;height:auto;border-radius:9px"/>
+<div class="game-gallery-pair">
+<figure class="gameplay-preview game-gallery-frame"><a href="assets/axolotl-go-title.webp" aria-label="View Title screen · Axolotl Go!"><img src="assets/axolotl-go-title.webp" alt="Axolotl Go! title screen with a pink axolotl" width="888" height="986" loading="lazy"/></a><figcaption>Title screen · Axolotl Go!</figcaption></figure>
+<figure class="gameplay-preview game-gallery-frame"><a href="assets/axolotl-go-gameplay.webp" aria-label="View Gameplay · Axolotl Go!"><img src="assets/axolotl-go-gameplay.webp" alt="A blue axolotl swimming above the seafloor" width="1200" height="681" loading="lazy"/></a><figcaption>Gameplay · Axolotl Go!</figcaption></figure>
 </div>
-<div class="app-card-action"><a class="btn main" href="https://eventhorizonstudio2027.github.io/Axolotl-Go/">Play Axolotl Go!</a></div>
+<a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Axolotl-Go/" aria-label="Play Axolotl Go!">Play <span aria-hidden="true">↗</span></a>
 </article>
-<article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></article>
+<article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p><button class="btn game-play" type="button" disabled aria-label="Monster Truck Go!: Play unavailable">Play unavailable</button></article>
 <article class="card rv portfolio-card" id="eat-your-veggies">
 <span class="tag">In development</span>
 <h3>Eat Your Veggies</h3>
 <p>A co-op adventure for kids and grownups where families pick vegetables and real-world taste tests move the story forward.</p>
+<a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/eat-your-veggies/" aria-label="Play Eat Your Veggies">Play <span aria-hidden="true">↗</span></a>
 </article>
 </div>
 </section>
