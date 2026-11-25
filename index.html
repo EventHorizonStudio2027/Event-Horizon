@@ -588,6 +588,25 @@ body:has(#game-image-viewer[open]) { overflow: hidden; }
 }
 #games .game-play.main { background-image: linear-gradient(120deg, #ffffff32, #ffffff00 70%); }
 </style>
+<style>
+#games .more-games-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:stretch}
+#games .more-games-grid > article {display:flex;flex-direction:column;align-items:stretch;align-self:stretch;min-width:0;gap:12px;padding:16px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:16px;text-align:left;overflow:hidden}
+#games .more-games-grid > article h3 {font-size:1.15rem;line-height:1.25;margin:0;color:var(--text);text-align:left}
+#games .more-games-grid > article > p,#games .more-games-grid .pill,#games .more-games-grid .pill2 {background:none;border:0;box-shadow:none;padding:0;color:var(--mut);font-size:.88rem;line-height:1.5;text-align:left;margin:0}
+#games .more-games-grid .pf-info,#games .more-games-grid .cm-info {display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:0}
+#games .more-games-grid .logo,#games .more-games-grid .game-wordmark {width:100%;height:74px;object-fit:contain;object-position:left center;margin:0;order:-1}
+#games .more-games-grid .game-icon,#games #recreated .app-card-heading img {width:64px;height:64px;object-fit:cover;border-radius:12px;margin:0}
+#games #recreated .app-card-heading {flex-direction:row;align-items:center;text-align:left;gap:12px}
+#games .more-games-grid .game-gallery-frame,#games #petal .game-gallery-frame,#games #cupcake .game-gallery-frame {width:100%;max-width:none;margin:0;min-width:0;background:#0c0e15}
+#games .more-games-grid .game-gallery-frame img,#games #monster-truck .truck-game-gallery img {width:100%;height:clamp(95px,13vw,160px);max-height:none;object-fit:contain}
+#games .more-games-grid .game-gallery-frame figcaption {font-size:.68rem;white-space:normal;line-height:1.3;padding:6px 8px}
+#games .more-games-grid .game-gallery-pair,#games .more-games-grid .truck-game-gallery,#games .more-games-grid .cupcake-gallery {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-items:start;width:100%}
+#games .more-games-grid .truck-game-gallery {grid-template-columns:repeat(3,minmax(0,1fr))}
+#games .more-games-grid .cm-art {display:flex;align-items:center;justify-content:center;min-height:100px}
+#games .more-games-grid details {color:var(--mut);font-size:.8rem}
+#games .more-games-grid details summary {cursor:pointer}
+#games .more-games-grid > article > .game-play {margin:auto 0 0;width:100%;min-height:42px;justify-content:center}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -811,7 +830,7 @@ Your browser does not support embedded video.
 </div>
 </section>
 <section id="games" style="padding-top:2rem">
-<div class="head rv"><span class="mono">More games</span><h2>More games <span class="grad">from the studio.</span></h2></div>
+<div class="head rv"><span class="mono">Game library</span><h2>More games <span class="grad">from the studio.</span></h2></div>
 <div class="more-games-grid">
 <article class="card rv portfolio-card" id="recreated">
 <div class="app-card-heading">
@@ -825,9 +844,9 @@ Your browser does not support embedded video.
 </figure>
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/recreated/" aria-label="Play Recreated">Play <span aria-hidden="true">↗</span></a>
 </article>
-<article class="pf rv" id="petal">
+<article class="card rv portfolio-card" id="petal">
 <div class="pf-info">
-<h3 class="sr">Petal 2 the Meadow</h3>
+<h3>Petal 2 the Meadow</h3>
 <img alt="Petal 2 the Meadow logo: cream bubble letters among white daisies and grass" class="logo" height="485" loading="lazy" src="assets/media_20.webp" width="923"/>
 <p class="pill">Pick, collect &amp; sell 25 flowers — can you find the rare ones? 🌸</p>
 <details class="petal-details"><summary>Controls and features</summary>
@@ -843,9 +862,9 @@ Your browser does not support embedded video.
 <figure class="pf-shot gameplay-preview game-gallery-frame"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
 <a class="btn main game-play" href="./play/petal-2-the-meadow/" aria-label="Play Petal 2 the Meadow">Play <span aria-hidden="true">↗</span></a>
 </article>
-<article class="cm rv" id="cupcake">
+<article class="card rv portfolio-card" id="cupcake">
 <div class="cm-info">
-<h3 class="sr">Mystery Cupcake Maker</h3>
+<h3>Mystery Cupcake Maker</h3>
 <img alt="Mystery Cupcake Maker logo: a pink cupcake and four mystery jars above bubble lettering" class="logo" height="243" loading="lazy" src="assets/media_22.webp" width="337"/>
 <p class="pill2">Pick a jar. Bake a surprise!</p>
 <details class="cupcake-details"><summary>Game features</summary>
@@ -860,7 +879,7 @@ Your browser does not support embedded video.
 </article>
 
 <article class="card rv portfolio-card" id="axolotl">
-<h3 class="sr">Axolotl Go!</h3>
+<h3>Axolotl Go!</h3>
 <img class="game-brand game-wordmark" src="assets/axolotl-go-logo.webp" alt="" width="350" height="200" loading="lazy"/>
 <p>Swim through an underwater world, collect gems, and dodge hazards before time runs out.</p>
 <div class="game-gallery-pair">
@@ -870,7 +889,7 @@ Your browser does not support embedded video.
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Axolotl-Go/" aria-label="Play Axolotl Go!">Play <span aria-hidden="true">↗</span></a>
 </article>
 <article class="card rv portfolio-card" id="monster-truck">
-<h3 class="sr">Monster Truck Go!</h3>
+<h3>Monster Truck Go!</h3>
 
 <p>Customize your truck, then hit the arena for jumps and turbo boosts.</p>
 <div class="truck-game-gallery">
