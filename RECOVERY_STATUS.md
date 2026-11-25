@@ -1,6 +1,6 @@
 # Event Horizon Studios — production recovery
 
-**Source of truth:** GitHub `main`. **Official site:** https://fatespassage.github.io/Event-Horizon/
+**Source of truth:** GitHub `main`. **Official site:** https://eventhorizonstudio2027.github.io/Event-Horizon/
 
 ## Approved design
 Restore the recovered nine-section Event Horizon website, including the original artwork and animations, cinematic nebula background, official centered metallic wordmark, square bouncing animated video logo in the left rail, and the interactive map. Do **not** redesign or substitute the existing simplified landing page.

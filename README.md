@@ -12,7 +12,7 @@ The full site includes an `index.html` and an `assets/` directory containing 20 
 
 1. Upload the complete website's `index.html` and `assets/` folder to the repository root.
 2. In Settings → Pages, select Deploy from a branch, `main`, `/ (root)`.
-3. Verify the published page and assets at https://fatespassage.github.io/Event-Horizon/.
+3. Verify the published page and assets at https://eventhorizonstudio2027.github.io/Event-Horizon/.
 4. Confirm the hero and main content are visible in Safari and Chromium, both desktop and mobile.
 
 ## Quality standards
