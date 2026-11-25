@@ -392,7 +392,18 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <style>#recreated .app-card-heading img { width: 64px; height: 64px; }</style>
 <style>
 #games .gameplay-preview { box-sizing: border-box; width: 75%; max-width: 552px; margin-inline: auto; }
-#recreated { grid-column: 1 / -1; width: 100%; }
+#games .more-games-grid { grid-auto-rows: 1fr; }
+#games .more-games-grid > article { grid-column: auto; min-width: 0; margin: 0; border-radius: 18px; }
+#games .more-games-grid > .pf { grid-template-columns: minmax(0, 1fr); align-content: start; }
+#games .more-games-grid > .card { display: flex; align-items: flex-start; justify-content: flex-start; padding: 1rem; }
+#games .more-games-grid > .card .ico { margin: 0 0 .65rem; }
+#games .more-games-grid > .card h3 { margin-bottom: .35rem; }
+#games .pf-info { gap: .55rem; padding-bottom: .65rem; }
+#games .pf-shot { margin-block: 0 1rem; }
+#games .gameplay-preview img { max-height: 125px; object-fit: contain; }
+#games .petal-details { font-size: .78rem; color: #244623; }
+#games .petal-details summary { cursor: pointer; font-weight: 600; }
+#games .petal-details .ctrls, #games .petal-details .chips2 { margin-top: .55rem; }
 #recreated .gameplay-preview { margin-block: 1rem 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
 #recreated .gameplay-preview a, #recreated .gameplay-preview img { display: block; width: 100%; height: auto; }
 #recreated .gameplay-preview figcaption { padding: .45rem .65rem; color: var(--mut); font-size: .7rem; }
@@ -641,6 +652,7 @@ Your browser does not support embedded video.
 <h3 class="sr">Petal 2 the Meadow</h3>
 <img alt="Petal 2 the Meadow logo: cream bubble letters among white daisies and grass" class="logo" height="485" loading="lazy" src="assets/media_20.webp" width="923"/>
 <p class="pill">Pick, collect &amp; sell 25 flowers — can you find the rare ones? 🌸</p>
+<details class="petal-details"><summary>Controls and features</summary>
 <div aria-label="Controls" class="ctrls">
 <div class="ctrl"><i>⌨️</i><b>Move</b><span>W A S D</span></div>
 <div class="ctrl"><i>🖱️</i><b>Look</b><span>Mouse</span></div>
@@ -648,6 +660,7 @@ Your browser does not support embedded video.
 <div class="ctrl"><i>🧺</i><b>Bag</b><span>Press B</span></div>
 </div>
 <div aria-label="Features" class="chips2"><span>🌸 Flower counter</span><span>🪙 Coins</span><span>🧺 Bag</span><span>🏪 Petal Shop</span></div>
+</details>
 </div>
 <figure class="pf-shot gameplay-preview"><a href="assets/media_21.webp" aria-label="View full-size Petal 2 the Meadow gameplay screenshot"><img alt="First-person gameplay in Petal 2 the Meadow: a sunny low-poly meadow with mountains, trees and a striped-awning Petal Shop" height="950" loading="lazy" src="assets/media_21.webp" width="1400"/></a><figcaption>Gameplay · the meadow and the Petal Shop</figcaption></figure>
 </article>
