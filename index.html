@@ -621,6 +621,19 @@ body:has(#game-image-viewer[open]) { overflow: hidden; }
 #apps .app-card-action .btn {white-space:normal;font-size:11px;padding:8px 5px;width:100%;justify-content:center;text-align:center}
 }
 </style>
+<style id="specializations-two-column-layout">
+#game .cards3.sp {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}
+#game .cards3.sp > .spec {min-width:0;grid-column:auto;grid-template-columns:minmax(0,118px) minmax(0,1fr);overflow-wrap:anywhere}
+#game .cards3.sp .spec > div {min-width:0}
+@media(max-width:760px){
+#game .cards3.sp {gap:8px}
+#game .cards3.sp > .spec {display:flex;flex-direction:column;padding:8px;gap:8px;border-radius:12px}
+#game .cards3.sp .spec > img {width:100%;height:auto;aspect-ratio:4/3;min-height:0;object-fit:cover;border-radius:8px}
+#game .cards3.sp .spec-name {font-size:clamp(12px,3.6vw,16px);gap:4px;justify-content:space-between;flex-wrap:wrap}
+#game .cards3.sp .spec-emblem {width:26px;height:26px;min-height:0;object-fit:contain}
+#game .cards3.sp .spec p {font-size:11px;line-height:1.4;margin-bottom:5px}
+}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
