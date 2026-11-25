@@ -500,6 +500,19 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 #overview .stat b { font-size: clamp(1rem, 2.75cqw, 1.65rem); }
 #overview .stat-label-wide { font-size: clamp(.59rem, 1.6cqw, .83rem); }
 </style>
+<style>
+#games .more-games-grid .logo { margin-inline: auto; }
+#games #cupcake .cm-art { justify-self: center; }
+#games .more-games-grid > article .ico { align-self: center; }
+#games #recreated .app-card-heading { width: 100%; flex-direction: column; gap: .3rem; text-align: center; }
+@media (max-width: 760px) {
+  #games #petal .pf-info { gap: .24rem; padding: .48rem .65rem .25rem; }
+  #games #petal .logo { width: min(100%, 150px); }
+  #games #petal .pf-shot { width: calc(100% - 1rem); margin-block: 0 .4rem; }
+  #games #petal .pf-shot img { max-height: 148px; }
+  #games #petal .pf-shot figcaption { padding-block: .24rem; }
+}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
