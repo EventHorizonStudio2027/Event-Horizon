@@ -503,6 +503,18 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 <style>
 #games .more-games-grid .logo { margin-inline: auto; }
 #games #cupcake .cm-art { justify-self: center; }
+#axolotl .axolotl-previews {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: center;
+  gap: 12px;
+}
+#axolotl .axolotl-previews a { display: block; border-radius: 9px; }
+#axolotl .axolotl-previews img { display: block; width: 100%; height: auto; border-radius: 9px; }
+@media (max-width: 480px) {
+  #axolotl .axolotl-previews { grid-template-columns: 1fr; }
+  #axolotl .axolotl-previews a { width: min(100%, 260px); justify-self: center; }
+}
 #games .more-games-grid > article .ico { align-self: center; }
 #games #recreated .app-card-heading { width: 100%; flex-direction: column; gap: .3rem; text-align: center; }
 @media (max-width: 760px) {
@@ -783,7 +795,12 @@ Your browser does not support embedded video.
 <article class="card rv portfolio-card" id="axolotl">
 <h3>Axolotl Go!</h3>
 <p>Swim through an underwater world, collect gems, and dodge hazards before time runs out.</p>
+<div class="axolotl-previews">
+<a href="https://eventhorizonstudio2027.github.io/Axolotl-Go/" aria-label="Play Axolotl Go!">
+<img src="assets/axolotl-go-title.webp" alt="Axolotl Go! title screen with a pink axolotl and a Play button" width="888" height="986" loading="lazy"/>
+</a>
 <img src="assets/axolotl-go-gameplay.webp" alt="A blue axolotl swimming above the seafloor with the Swim and Look controls visible" width="1200" height="681" loading="lazy" style="display:block;width:100%;height:auto;border-radius:9px"/>
+</div>
 <div class="app-card-action"><a class="btn main" href="https://eventhorizonstudio2027.github.io/Axolotl-Go/">Play Axolotl Go!</a></div>
 </article>
 <article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p></article>
