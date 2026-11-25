@@ -571,6 +571,23 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 #games .truck-game-gallery { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.35fr); gap: .35rem; width: 100%; align-items: start; }
 #games #monster-truck .truck-game-gallery img { width: 100%; height: auto; max-height: none; }
 </style>
+<style>
+#game-image-viewer { width: min(92vw, 850px); max-height: 92dvh; padding: .75rem; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 16px; }
+#game-image-viewer::backdrop { background: #07080de0; }
+#game-image-viewer header { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-bottom: .6rem; }
+#game-image-viewer h2 { font-size: .9rem; margin: 0; }
+#game-image-viewer .btn { padding: .35rem .65rem; color: var(--text); }
+#game-image-viewer img { display: block; width: 100%; max-height: 74dvh; object-fit: contain; }
+body:has(#game-image-viewer[open]) { overflow: hidden; }
+#games .game-gallery-frame a { display: block; }
+#games .game-gallery-frame a:focus-visible { outline: 2px solid var(--a); outline-offset: -2px; }
+@container (max-width: 460px) {
+  #games .truck-game-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #games .truck-game-gallery figure:last-child { grid-column: 1 / -1; }
+  #games .truck-game-gallery figure:last-child img { max-height: 230px; }
+}
+#games .game-play.main { background-image: linear-gradient(120deg, #ffffff32, #ffffff00 70%); }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -976,6 +993,8 @@ Your browser does not support embedded video.
       }) : [];
       function landAtSection(){
         if(location.hash===hash&&!rail.hasAttribute('data-expanded')){
+          if(!target.hasAttribute('tabindex'))target.setAttribute('tabindex','-1');
+          target.focus({preventScroll:true});
           target.scrollIntoView({block:'start',inline:'nearest',behavior:'instant'});
         }
       }
@@ -1107,6 +1126,43 @@ Your browser does not support embedded video.
     video.play().catch(syncSoundButton);
   },{threshold:1});
   observer.observe(video);
+})();
+</script>
+<dialog id="game-image-viewer" aria-labelledby="game-image-title">
+<header><h2 id="game-image-title">Game preview</h2><form method="dialog"><button class="btn" autofocus>Close</button></form></header>
+<img alt=""/>
+</dialog>
+<script>
+(function(){
+  var gallery=document.getElementById('games');
+  var viewer=document.getElementById('game-image-viewer');
+  if(typeof viewer.showModal!=='function')return;
+  var image=viewer.querySelector('img');
+  var title=document.getElementById('game-image-title');
+  var opener;
+  gallery.addEventListener('click',function(event){
+    if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    var link=event.target.closest('.game-gallery-frame a');
+    if(!link||viewer.open)return;
+    var frame=link.closest('figure');
+    var thumbnail=link.querySelector('img');
+    if(!thumbnail)return;
+    event.preventDefault();
+    opener=link;
+    title.textContent=frame.querySelector('figcaption').textContent;
+    image.alt=thumbnail.alt;
+    image.src=link.href;
+    viewer.showModal();
+  });
+  viewer.addEventListener('click',function(event){
+    if(event.target!==viewer)return;
+    var box=viewer.getBoundingClientRect();
+    if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)viewer.close();
+  });
+  viewer.addEventListener('close',function(){
+    image.removeAttribute('src');
+    if(opener&&opener.isConnected)opener.focus({preventScroll:true});
+  });
 })();
 </script>
 </body>
