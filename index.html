@@ -419,9 +419,13 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
     height: calc(100dvh - env(safe-area-inset-top, 0px) - var(--rail-inset));
     max-height: none;
     padding-bottom: calc(.5rem + env(safe-area-inset-bottom, 0px));
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
+  body:has(#rail[data-expanded]) { --rail-width: clamp(144px, 37vw, 224px); }
+  #rail :is(a, summary, button) { font-size: .72rem; gap: .35rem; }
+  #rail .rail-items a { font-size: .68rem; overflow-wrap: normal; }
+  #rail .rail-label { white-space: nowrap; }
   .aurora::before, .bh {
     top: auto;
     right: auto;
