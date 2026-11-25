@@ -19,14 +19,14 @@
 body { font-optical-sizing: auto; line-height: 1.6; }
 p { text-wrap: pretty; }
 h1, h2, h3 { font-family: var(--display-font); }
-h2 { font-size: clamp(1.65rem, 4.3cqw, 2.8rem); line-height: 1.08; text-wrap: balance; }
-h3 { font-size: clamp(1.03rem, 1.85cqw, 1.28rem); line-height: 1.22; text-wrap: balance; }
+h2 { font-size: clamp(1.518rem, 3.956cqw, 2.576rem); line-height: 1.08; text-wrap: balance; }
+h3 { font-size: clamp(0.9476rem, 1.702cqw, 1.1776rem); line-height: 1.22; text-wrap: balance; }
 .grad { background-image: linear-gradient(105deg, #f5ceab, #c9baff); }
 .mono { color: var(--b); letter-spacing: .09em; }
 .head, .intro { margin-bottom: clamp(1rem, 3cqw, 1.85rem); }
 .head .mono { margin-bottom: .65rem; }
 .head h2, .intro h2 { max-inline-size: 23ch; }
-.head p, .intro p { font-size: clamp(.93rem, 1.7cqw, 1.08rem); line-height: 1.65; }
+.head p, .intro p { font-size: clamp(0.8556rem, 1.564cqw, 0.9936rem); line-height: 1.65; }
 .head p { margin-top: .7rem; }
 .head .mono, .intro .mono, .gh .mono {
   font-family: Inter, system-ui, sans-serif;
@@ -57,8 +57,8 @@ h3 { font-size: clamp(1.03rem, 1.85cqw, 1.28rem); line-height: 1.22; text-wrap: 
 
 .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); border-radius: 12px; }
 .stat { background: var(--surface); padding: clamp(.35rem, 1.15cqw, .7rem) clamp(.2rem, 1.4cqw, .85rem); }
-.stat b { color: var(--a); font: 600 clamp(1rem, 2.75cqw, 1.65rem)/1 var(--display-font); font-variant-numeric: tabular-nums; }
-.stat span { margin-top: .23rem; font-size: clamp(.59rem, 1.6cqw, .83rem); line-height: 1.2; }
+.stat b { color: var(--a); font: 600 clamp(0.92rem, 2.53cqw, 1.518rem)/1 var(--display-font); font-variant-numeric: tabular-nums; }
+.stat span { margin-top: .23rem; font-size: clamp(0.5428rem, 1.472cqw, 0.7636rem); line-height: 1.2; }
 
 #cinematic-showcase {
   width: 100%;
@@ -76,8 +76,8 @@ h3 { font-size: clamp(1.03rem, 1.85cqw, 1.28rem); line-height: 1.22; text-wrap: 
   border-radius: var(--panel-radius);
   background: radial-gradient(ellipse at top left, #1d1a2b, transparent 72%), var(--surface);
 }
-#cinematic-showcase h2 { margin: 0 0 .35rem; font-size: clamp(1.25rem, 3.5cqw, 2.15rem); }
-.eh-cinema-copy p { margin: 0; color: var(--mut); font-size: clamp(.85rem, 1.6cqw, 1rem); }
+#cinematic-showcase h2 { margin: 0 0 .35rem; font-size: clamp(1.15rem, 3.22cqw, 1.978rem); }
+.eh-cinema-copy p { margin: 0; color: var(--mut); font-size: clamp(0.782rem, 1.472cqw, 0.92rem); }
 #cinematic-showcase .eh-cinema-feature { width: 100%; margin: 0; }
 #cinematic-showcase video {
   display: block;
@@ -118,7 +118,7 @@ h3 { font-size: clamp(1.03rem, 1.85cqw, 1.28rem); line-height: 1.22; text-wrap: 
 .flagship-media picture { display: block; }
 .flagship-media .cine img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; animation: none; }
 .flagship-media .cap { position: static; flex: 1; align-items: flex-start; background: none; padding: 1rem; }
-.flagship-media .cap p { font-size: .9rem; }
+.flagship-media .cap p { font-size: 0.828rem; }
 .flagship-media .fates-trailer {
   width: auto;
   margin: 0;
@@ -210,7 +210,7 @@ h3 { font-size: clamp(1.03rem, 1.85cqw, 1.28rem); line-height: 1.22; text-wrap: 
 .tabs { border-radius: 13px; gap: .25rem; }
 .tabs button { border-radius: 9px; }
 .tabs button[aria-selected="true"] { box-shadow: none; }
-.row h3 { font-size: 1.02rem; }
+.row h3 { font-size: 0.9384rem; }
 .row p { line-height: 1.45; }
 .foot h4 { font-family: Inter, system-ui, sans-serif; font-weight: 700; letter-spacing: .09em; }
 .foot p, .foot a { line-height: 1.5; }
