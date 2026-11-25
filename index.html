@@ -38,8 +38,8 @@ p{margin:0 0 1em;color:var(--mut);max-width:56ch}a{color:inherit}
 .grad{background:linear-gradient(95deg,var(--ga,var(--a)),var(--gb,var(--b)) 50%,var(--gc,var(--c)));-webkit-background-clip:text;background-clip:text;color:transparent}
 
 :root{--rail-inset:clamp(8px,1.4vw,14px)}
-body{--rail-width:clamp(54px,7vw,84px)}
-body:has(#rail[data-expanded]){--rail-width:clamp(120px,33vw,224px)}
+body{--rail-width:clamp(59.4px,7.7vw,92.4px)}
+body:has(#rail[data-expanded]){--rail-width:clamp(132px,36.3vw,246.4px)}
 .rail{
   position:fixed;z-index:70;
   top:calc(env(safe-area-inset-top,0px) + var(--rail-inset));
@@ -59,7 +59,7 @@ body:has(#rail[data-expanded]){--rail-width:clamp(120px,33vw,224px)}
 }
 .rail :is(summary,button,a):is(:hover,:focus-visible),.rail .on{color:var(--text);background:var(--glass2)}
 .rail .on{box-shadow:inset 2px 0 var(--a)}
-.rail svg{width:19px;height:19px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rail svg{width:23.75px;height:23.75px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .rail summary{list-style:none}
 .rail summary::-webkit-details-marker{display:none}
 .rail:not([data-expanded]) :is(.rail-label,.rail-items){display:none}
@@ -305,7 +305,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 
 <style>
 #eh-top-left-animated-logo{
-  display:block;width:min(100%,64px);height:auto;aspect-ratio:1;
+  display:block;width:min(calc(100% + 4px),80px);height:auto;aspect-ratio:1;
   align-self:center;margin:3px 0 10px;object-fit:cover;
   border:1px solid rgba(255,255,255,.14);border-radius:12px;
   outline:1px solid rgba(232,172,103,.28);outline-offset:2px;
@@ -313,7 +313,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 }
 @keyframes eh-logo-bounce{to{transform:translateY(5px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#eh-top-left-animated-logo{animation:none}}
-@media(max-width:500px){.rail svg{width:16px;height:16px}.rail :is(summary,button,a){padding-inline:.3rem}}
+@media(max-width:500px){.rail svg{width:20px;height:20px}.rail :is(summary,button,a){padding-inline:.3rem}}
 /* Compact game cards share a grid and keep their artwork in view. */
 .more-games-grid{max-width:850px;margin-inline:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .more-games-grid>.pf,.more-games-grid>.cm{grid-template-columns:minmax(0,1fr);margin:0;border-radius:18px}
@@ -412,7 +412,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
 <style>
 #overview .stat-label-mobile { display: none; }
 @media (max-width: 600px) {
-  body { --rail-width: 47px; }
+  body { --rail-width: 51.7px; }
   #rail {
     bottom: 0;
     height: calc(100vh - env(safe-area-inset-top, 0px) - var(--rail-inset));
@@ -422,7 +422,7 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:.85rem;display:flex;justif
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
   }
-  body:has(#rail[data-expanded]) { --rail-width: clamp(144px, 37vw, 224px); }
+  body:has(#rail[data-expanded]) { --rail-width: clamp(158.4px, 40.7vw, 246.4px); }
   #rail :is(a, summary, button) { font-size: .72rem; gap: .35rem; }
   #rail .rail-items a { font-size: .68rem; overflow-wrap: normal; }
   #rail .rail-label { white-space: nowrap; }
