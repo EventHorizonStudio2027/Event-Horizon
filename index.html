@@ -607,6 +607,12 @@ body:has(#game-image-viewer[open]) { overflow: hidden; }
 #games .more-games-grid details summary {cursor:pointer}
 #games .more-games-grid > article > .game-play {margin:auto 0 0;width:100%;min-height:42px;justify-content:center}
 </style>
+<style id="apps-two-column-layout">
+#apps > .g3 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+#apps > .g3 > .portfolio-card { min-width:0; overflow-wrap:anywhere; }
+#apps .app-card-heading { flex-wrap:wrap; }
+#apps .app-card-action .btn { white-space:normal; }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
