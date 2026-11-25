@@ -549,6 +549,24 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
 #games #petal .game-gallery-frame { width: calc(100% - 2rem); margin-inline: auto; }
 #games #cupcake > .game-play { margin-inline: 0; }
 </style>
+<style>
+#games .more-games-grid { gap: .75rem; }
+#games .more-games-grid > article { display: flex; flex-direction: column; align-items: center; gap: .55rem; padding: clamp(.7rem, 2.4cqw, 1.05rem); }
+#games .pf-info, #games .cm-info { width: 100%; padding: 0; gap: .45rem; align-items: center; }
+#games :is(#petal, #cupcake) .logo { width: min(100%, 185px); height: 88px; object-fit: contain; margin: 0 auto; }
+#games .game-brand { display: block; object-fit: contain; margin: 0 auto; }
+#games .game-wordmark { width: min(100%, 164px); height: auto; border-radius: 9px; }
+#games .game-icon, #games #recreated .app-card-heading img { width: 80px; height: 80px; border-radius: 18px; }
+#games #recreated .app-card-heading { margin: 0; }
+#games .more-games-grid > article > p, #games :is(.pill, .pill2) { margin: 0; text-align: center; }
+#games .game-gallery-frame, #games #petal .game-gallery-frame, #games #recreated .game-gallery-frame { width: 100%; max-width: none; margin: 0; }
+#games .game-gallery-frame img, #games .game-gallery-pair img { height: auto; max-height: none; }
+#games .game-gallery-pair { grid-template-columns: minmax(0, .54fr) minmax(0, 1fr); gap: .35rem; align-items: start; }
+#games .cupcake-gallery { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1fr); gap: .45rem; align-items: center; width: 100%; }
+#games #cupcake .cm-art, #games #cupcake .game-gallery-frame { width: 100%; min-width: 0; margin: 0; }
+#games #cupcake .cm-art img { width: 100%; height: auto; }
+#games .game-play, #games :is(#petal, #cupcake) > .game-play { width: 100%; justify-content: center; align-self: stretch; margin: 0; }
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#overview">Skip to content</a>
@@ -788,7 +806,6 @@ Your browser does not support embedded video.
 </article>
 <article class="pf rv" id="petal">
 <div class="pf-info">
-<span class="tag">Game</span>
 <h3 class="sr">Petal 2 the Meadow</h3>
 <img alt="Petal 2 the Meadow logo: cream bubble letters among white daisies and grass" class="logo" height="485" loading="lazy" src="assets/media_20.webp" width="923"/>
 <p class="pill">Pick, collect &amp; sell 25 flowers — can you find the rare ones? 🌸</p>
@@ -807,22 +824,23 @@ Your browser does not support embedded video.
 </article>
 <article class="cm rv" id="cupcake">
 <div class="cm-info">
-<span class="tag">Game</span>
 <h3 class="sr">Mystery Cupcake Maker</h3>
 <img alt="Mystery Cupcake Maker logo: a pink cupcake and four mystery jars above bubble lettering" class="logo" height="243" loading="lazy" src="assets/media_22.webp" width="337"/>
 <p class="pill2">Pick a jar. Bake a surprise!</p>
 <details class="cupcake-details"><summary>Game features</summary>
 <div aria-label="Game features" class="badges"><span class="b1">5 Mystery Jars</span><span class="b2">1 Free Pass</span><span class="b3">4.7+ Score = Gold Medal</span></div>
 <div aria-label="In the game" class="cm-btns"><span>🏅 Cupcake Shop</span><span>🏆 Leaderboard</span></div>
-<div class="cm-art"><img alt="Three frosted cupcakes: pink, yellow and blue" height="167" loading="lazy" src="assets/media_23.webp" width="324"/></div>
 </details>
 </div>
+<div class="cupcake-gallery"><div class="cm-art"><img alt="Three frosted cupcakes: pink, yellow and blue" height="167" loading="lazy" src="assets/media_23.webp" width="324"/></div>
 <figure class="gameplay-preview game-gallery-frame"><a href="assets/cupcake-maker-gameplay.webp" aria-label="View Gameplay · Mystery Cupcake Maker"><img src="assets/cupcake-maker-gameplay.webp" alt="Mystery Cupcake Maker jars and baking controls" width="896" height="1100" loading="lazy"/></a><figcaption>Gameplay · Mystery Cupcake Maker</figcaption></figure>
+</div>
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/Mystery-Cupcake-Maker/" aria-label="Play Mystery Cupcake Maker">Play <span aria-hidden="true">↗</span></a>
 </article>
 
 <article class="card rv portfolio-card" id="axolotl">
-<h3>Axolotl Go!</h3>
+<h3 class="sr">Axolotl Go!</h3>
+<img class="game-brand game-wordmark" src="assets/axolotl-go-logo.webp" alt="" width="350" height="200" loading="lazy"/>
 <p>Swim through an underwater world, collect gems, and dodge hazards before time runs out.</p>
 <div class="game-gallery-pair">
 <figure class="gameplay-preview game-gallery-frame"><a href="assets/axolotl-go-title.webp" aria-label="View Title screen · Axolotl Go!"><img src="assets/axolotl-go-title.webp" alt="Axolotl Go! title screen with a pink axolotl" width="888" height="986" loading="lazy"/></a><figcaption>Title screen · Axolotl Go!</figcaption></figure>
@@ -832,7 +850,7 @@ Your browser does not support embedded video.
 </article>
 <article class="card rv d1" id="monster-truck"><div class="ico">🛻</div><h3>Monster Truck Go!</h3><p class="soon">Game · Announcement soon</p><button class="btn game-play" type="button" disabled aria-label="Monster Truck Go!: Play unavailable">Play unavailable</button></article>
 <article class="card rv portfolio-card" id="eat-your-veggies">
-<span class="tag">In development</span>
+<img class="game-brand game-icon" src="assets/eat-your-veggies-icon.png" alt="" width="180" height="180" loading="lazy"/>
 <h3>Eat Your Veggies</h3>
 <p>A co-op adventure for kids and grownups where families pick vegetables and real-world taste tests move the story forward.</p>
 <a class="btn main game-play" href="https://eventhorizonstudio2027.github.io/eat-your-veggies/" aria-label="Play Eat Your Veggies">Play <span aria-hidden="true">↗</span></a>
