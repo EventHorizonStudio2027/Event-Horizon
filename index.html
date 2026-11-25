@@ -91,7 +91,7 @@ section:first-child{padding-top:5rem}
 
 .hero{position:relative;display:flex;align-items:flex-end;padding-bottom:clamp(1.5rem,6.4vw,3.5rem)}.hero::after{content:"";position:absolute;inset:-2rem -60vw 0 -60vw;background:linear-gradient(to top,var(--bg) 6%,color-mix(in srgb,var(--bg) 55%,transparent) 38%,transparent 62%);z-index:1;pointer-events:none}.hero>div:first-child{position:relative;z-index:2;max-width:48rem}
 #overview .btns{margin-top:clamp(.5rem,3.6vw,2rem)}
-#overview .btn{padding:clamp(.6rem,1.7vw,.9rem) clamp(.75rem,2.8vw,1.5rem)}
+#overview .btn{font-size:.95rem;padding:clamp(.6rem,1.7vw,.9rem) clamp(.75rem,2.8vw,1.5rem)}
 #overview .btn:not(.main){background:color-mix(in srgb,var(--bg) 65%,transparent)}
 .hero p.lead{font-size:1.196rem;margin-top:1.5rem;max-width:42rem}
 .bh{--hole-size:clamp(180px,33vw,420px);position:fixed;z-index:0;aspect-ratio:1;width:var(--hole-size);right:calc(-10% + min(200px,32vw));top:max(0px,min(calc(min(480px,58svh) + 350px),100svh - var(--hole-size) - 12px));pointer-events:none;opacity:.48}
@@ -436,10 +436,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
   .bh { transform: translate(-50%, 50%); }
   #overview .hero > div:first-child { width: 100%; }
   #overview .btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem; }
-  #overview .btn { justify-content: center; text-align: center; padding: .35rem .25rem; font-size: 0.6072rem; }
+  #overview .btn { justify-content: center; text-align: center; padding: .35rem .25rem; font-size: .66rem; }
   #overview .stat { text-align: center; padding: .5rem .15rem; }
   #overview .stat-label-wide { display: none; }
-  #overview .stat-label-mobile { display: block; margin-top: .25rem; font-size: clamp(0.4232rem, 2.254cqw, 0.552rem); }
+  #overview .stat-label-mobile { display: block; margin-top: .25rem; font-size: clamp(.46rem, 2.45cqw, .6rem); }
   #cinematic-showcase {
     margin-top: .85rem;
     padding: .65rem;
@@ -495,6 +495,10 @@ footer{padding:4rem 0 3rem;color:var(--mut);font-size:0.782rem;display:flex;just
     to { opacity: 1; }
   }
 }
+</style>
+<style>
+#overview .stat b { font-size: clamp(1rem, 2.75cqw, 1.65rem); }
+#overview .stat-label-wide { font-size: clamp(.59rem, 1.6cqw, .83rem); }
 </style>
 </head>
 <body id="top">
